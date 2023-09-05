@@ -12,8 +12,18 @@ sapply(paste0(libDir,"/",libs), source)
 load(dataFilenameRData)
 names(data)
 
-### Plot by year
-my_hist(data$Year)
+# restrict data to articles
+data <- subset(data, Document.Type=="Article")
+
+### Plot by year (barplot)
+my_hist(data$Year, main="", xlab="Time", ylab="Number of articles")
+
+
 
 ### Extract keywords
-exkey <- sapply(data$Index.Keywords, split_keywords)
+make_word_table(data$Index.Keywords, 10, sep="; ")
+make_word_table(data$Author.Keywords, 10, sep="; ")
+
+### Extract word from text
+make_word_table(data$Title, 10, count.repeated=F)
+make_word_table(data$Abstract, 10, count.repeated=F)
