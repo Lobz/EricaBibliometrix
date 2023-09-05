@@ -1,0 +1,10 @@
+# ignore input and output files, and all data files
+input/
+output/
+*.csv
+*.Rdata
+*.RData
+*.RHistory
+
+# ignore pdfs
+*.pdf
