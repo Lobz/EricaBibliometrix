@@ -44,6 +44,10 @@ dados <- lapply(dados, subset, select=common_colnames)
 ## Merge data from all files
 full_dataset <- do.call(rbind, dados)
 
+## Save merged data
+my_write.csv(full_dataset, dataFilenameCSV)
+save(full_dataset, file=dataFilenameRData)
+
 ## Check for duplicate data
 dois <- full_dataset$DOI
 dups <- duplicated(dois)
@@ -52,8 +56,10 @@ dups <- duplicated(dois)
 data <- full_dataset[!dups,]
 
 ## Check the content of columns
-dataf <- rea
-data <- convert_with(data, c("Document.Type", "Publication.Stage", "Source.title", "Open.Access"), as.factor)
+dataf <- read.csv("./dados_consolidados.csv",stringsAsFactors=T)
+summary(dataf)
+data <- convert_with(data, c("Document.Type", "Publication.Stage", "Source", "Open.Access"), as.factor)
+data <- convert_with(data, c("Page.count", "Cited", "Year"), as.numeric)
 
 ## Save merged data
 my_write.csv(full_dataset, dataFilenameCSV)
