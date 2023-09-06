@@ -6,5 +6,11 @@ output/
 *.RData
 *.RHistory
 
-# ignore pdfs
+# ignore pdfs and images
 *.pdf
+*.png
+*.jpg
+*.jpeg
+
+# ignore reference folder
+ref/
