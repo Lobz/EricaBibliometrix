@@ -27,12 +27,17 @@ save.plot <- function(name, FUN, width = 600, height = 400, ...) {
 }
 
 ## plot a histogram of a column
-my_hist <- function(data, col = make_colors(1:20),...) {
+my_hist <- function(data, breaks = FALSE, col = if(breaks) make_colors(1:breaks) else make_colors(data), ...) {
     if (is.factor(data) | is.logical(data) | is.integer(data)) {
         fhist(data, col = col,...)
     }
     else {
-        hist(data, col = col, ...)
+        if (breaks) {
+            hist(data, col = col, breaks = breaks, ...)
+        }
+        else {
+            hist(data, col = col, ...)
+        }
     }
 }
 

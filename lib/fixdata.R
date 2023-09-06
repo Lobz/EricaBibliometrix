@@ -60,9 +60,3 @@ merge.data <- function(d1, d2, origin.column="filename") {
 
 
 }
-
-# A shorthand to list all unique values in an array or list
-list_unique <- function(x) {sort(unique(unlist(x)))}
-
-# A shorthand to count unique values in an array or list
-count_unique <- function(x) length(list_unique(x))

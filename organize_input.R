@@ -53,7 +53,7 @@ data <- full_dataset[!dups,]
 
 ## Check the content of columns and use the proper type for specific fields
 data <- convert_with(data, c("Document.Type", "Publication.Stage", "Source", "Open.Access"), as.factor)
-data <- convert_with(data, c("Page.count", "Cited", "Year"), as.numeric)
+data <- convert_with(data, c("Page.count", "Cited", "Year"), as.integer)
 summary(data)
 
 ## Save merged data

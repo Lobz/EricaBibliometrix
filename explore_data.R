@@ -16,13 +16,16 @@ names(data)
 data <- subset(data, Document.Type=="Article")
 
 ### Plot by year (barplot)
-my_hist(data$Year, main="", xlab="Time", ylab="Number of articles")
+lastYear <- max(data$Year)
+firstYear <- min(data$Year)
+numberofyears <- lastYear - firstYear +1
+my_hist(data$Year, main="", xlab="Time", ylab="Number of publications")
+savePlot("pubsbyyear.png")
 
 
-
-### Extract keywords
-make_word_table(data$Index.Keywords, 10, sep="; ")
-make_word_table(data$Author.Keywords, 10, sep="; ")
+### Extract keywords (set sep as the separator between keywords)
+make_word_table(data$Index.Keywords, 10, sep = "; ")
+make_word_table(data$Author.Keywords, 10, sep = "; ")
 
 ### Extract word from text
 make_word_table(data$Title, 10, count.repeated=F)
