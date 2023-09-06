@@ -16,8 +16,8 @@ dataFilenameCSV <- "dados_consolidados.csv"
 dataFilenameRData <- "dados_consolidados.RData"
 # Included files folder
 libDir <- "lib"
-libs <- c("io.R", "fixdata.R")
-
+# load all files listed in libs
+sapply(list.files(libDir, full.names = T), source)
 
 # load all files listes in libs
 sapply(paste0(libDir,"/",libs), source)

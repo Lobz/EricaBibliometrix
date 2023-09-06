@@ -3,10 +3,8 @@ dataFilenameCSV <- "dados_consolidados.csv"
 dataFilenameRData <- "dados_consolidados.RData"
 # Included files folder
 libDir <- "lib"
-libs <- c("io.R", "extractwords.R", "plotfuns.R")
-
 # load all files listed in libs
-sapply(paste0(libDir,"/",libs), source)
+sapply(list.files(libDir, full.names = T), source)
 
 # load data
 load(dataFilenameRData)
