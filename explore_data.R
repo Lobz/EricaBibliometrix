@@ -22,9 +22,14 @@ savePlot("pubsbyyear.png")
 
 
 ### Extract keywords (set sep as the separator between keywords)
-make_word_table(data$Index.Keywords, 10, sep = "; ")
-make_word_table(data$Author.Keywords, 10, sep = "; ")
+keywordTab <- make_word_table(data$Index.Keywords, 20, sep = "; ")
+par(mar=c(5,12,1,1))
+barplot(keywordTab$Rel.Freq, col = 1, xlab = "Percentage of publications", names.arg = row.names(keywordTab), horiz=T, las=2)
+savePlot("indexkeywords.png")
+authorKeywordTab <- make_word_table(data$Author.Keywords, 20, sep = "; ")
+barplot(authorKeywordTab$Rel.Freq, col = 1, xlab = "Percentage of publications", names.arg = row.names(authorKeywordTab), horiz=T, las=2)
+savePlot("authorkeywords.png")
 
 ### Extract word from text
-make_word_table(data$Title, 10, count.repeated=F)
-make_word_table(data$Abstract, 10, count.repeated=F)
+make_word_table(data$Title, 20)
+make_word_table(data$Abstract, 20)
