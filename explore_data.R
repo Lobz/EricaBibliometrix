@@ -11,37 +11,14 @@ load(dataFilenameRData)
 #data <- my_read.csv(dataFilenameCSV)
 names(data)
 
-### Subgroups
-#climateChangeGroup = climate change OR blue C OR greenhouse gas mitigation OR carbon stock OR carbon sink
+### Subgroups defined by presence of these terms in Title or Abstract or Keywords, or terms containing these in Keywords
 climateChangeWords <- c("climate change", "blue carbon", "greenhouse gas mitigation", "carbon stock", "carbon sink", "carbon sequestration")
-#recoveryGroup = recovery OR microbial succession OR reforest OR replant
 recoveryWords <- c("recovery", "microbial succession", "reforestation", "replanting", "restoration", "remediation")
-
-### Plot by year (barplot)
-lastYear <- max(data$Year)
-firstYear <- min(data$Year)
-numberofyears <- lastYear - firstYear +1
-yearFreq <- table(data$Year)
-plot(yearFreq, main="", xlab="Time", ylab="Number of articles", type="l")
-savePlot("./output/pubsbyyear.png")
-
-
 
 
 ### Extract keywords (set sep as the separator between keywords)
 (keywordTab <- make_word_table(data$Index.Keywords, min.Freq = 1, sep = "; "))
 (authorKeywordTab <- make_word_table(data$Author.Keywords, min.Freq = 1, sep = "; "))
-
-## how many keywords to plot in the barplot
-maxwords <- 10
-
-par(mar=c(5,12,1,1))
-barplot(keywordTab$Rel.Freq[1:maxwords], col = 1, xlab = "Percentage of publications", names.arg = row.names(keywordTab)[1:maxwords], horiz=T, las=2)
-savePlot("output/indexkeywords.png")
-
-par(mar=c(5,12,1,1))
-barplot(authorKeywordTab$Rel.Freq[1:maxwords], col = 1, xlab = "Percentage of publications", names.arg = row.names(authorKeywordTab)[1:maxwords], horiz=T, las=2)
-savePlot("output/authorkeywords.png")
 
 ### Find a list of keywords containing the keywords for each group:
 keywords <- list_unique(c(rownames(keywordTab), (rownames(authorKeywordTab))))
@@ -63,10 +40,38 @@ words <- list_unique(c(rownames(titleWords),rownames(abstractWords)))
 write(words, "./output/words.txt")
 
 ### Set a variable to list if a document contain any words in each group
+data$climateWords <- str_contains_any(data$Title, climateChangeWords) | str_contains_any(data$Abstract, climateChangeWords)
+data$recoveryWords <- str_contains_any(data$Title, recoveryWords) | str_contains_any(data$Abstract, recoveryWords)
 
+### Join keyword and word groups
+data$climateGroup <- data$climateKeywords | data$climateWords
+data$recoveryGroup <- data$recoveryKeywords | data$recoveryWords
+### Create a factor for groups
+# 0: none
+# 1: climate
+# 2: recovery
+# 3: both
+groupLevels <- c("neither", "climate change", "recovery", "both")
+data$group <- factor(data$climateGroup + 2*data$recoveryGroup, labels=groupLevels, ordered=F, levels=0:3)
+summary(data$group)
 
 #### Plots/tables we want:
 # Pubs per year
+### Plot by year (barplot)
+lastYear <- max(data$Year)
+firstYear <- min(data$Year)
+numberofyears <- lastYear - firstYear +1
+years <- firstYear:lastYear
+yearFreq <- table(data$Year)
+plot(yearFreq, main="", xlab="Time", ylab="Number of articles", type="l")
+savePlot("./output/pubsbyyear.png")
+
+# Group prevalence per year
+y <- factor(data$Year, levels=years, ordered=T)
+yearFreqTab <- table(y, data$group)
+# climate
+stackplot(yearFreqTab[,c(1,2,4,3)], main="Articles per year", xlab="Time", ylab="Number of articles", col=c("grey","red","magenta","blue"), legend=c("neither", "climate change", "both", "recovery"))
+savePlot("./output/pubsbyyeargrouped2023.png")
 
 
 # Top journals
@@ -74,10 +79,19 @@ write(words, "./output/words.txt")
 
 res <- fieldByYear(M, field = "ID", min.freq = 10, n.items = 10, graph = TRUE)
 # Table of most cited pubs
+mostCited <- data[order(data$Cited.by, decreasing=T),][1:10,]
+
 # Distribution of citation and author afilliation
+hist(data$Cited.by, main="Distribution of citations", xlab="Number of citations", ylab="Number of articles")
 # Country of origin?
 # Most used words (title, auth-keyword, ind-keywords, separate tables)
+## how many keywords to plot in the barplot
+maxwords <- 10
 
-#### Group plots:
-# Group prevalence per year
-#
+par(mar=c(5,12,1,1))
+barplot(keywordTab$Rel.Freq[1:maxwords], col = 1, xlab = "Percentage of articles", names.arg = row.names(keywordTab)[1:maxwords], horiz=T, las=2)
+savePlot("output/indexkeywords.png")
+
+par(mar=c(5,12,1,1))
+barplot(authorKeywordTab$Rel.Freq[1:maxwords], col = 1, xlab = "Percentage of articles", names.arg = row.names(authorKeywordTab)[1:maxwords], horiz=T, las=2)
+savePlot("output/authorkeywords.png")

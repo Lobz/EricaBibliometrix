@@ -59,3 +59,9 @@ subwords <- function(x, corpus) {
 contains_any <- function(wordlists, patterns) {
   sapply(wordlists,function(x,y) any((x %in% y)), y=patterns)
 }
+
+# For each text in a vector, find of any are in the list of patters
+str_contains_any <- function(x, patterns) {
+  x <- tolower(x)
+  sapply(data$Title,function(x)any(str_detect(x, patterns)))
+}
