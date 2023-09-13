@@ -7,6 +7,10 @@ split_keywords <- function(keywords, sep="\\W+", remove.duplicates=T, remove.ter
   wordlist[!wordlist %in% remove.terms]
 }
 
+make_wordslist <- function(x, ...) {
+  lapply(x, split_keywords, ...)
+}
+
 make_word_table <- function(x, min.Freq=1, sep="\\W+", remove.terms = c("")) {
   # count total number of items
   corpus_size <- length(x)
@@ -15,7 +19,7 @@ make_word_table <- function(x, min.Freq=1, sep="\\W+", remove.terms = c("")) {
   x <- tolower(x)
 
   # split text into words/keywords
-  wordlists <- sapply(x, split_keywords, sep=sep, remove.terms = remove.terms)
+  wordlists <- make_wordslist(x, sep=sep, remove.terms = remove.terms)
   tab <- sort(table(unlist(wordlists)), decreasing=T)
 
   tab <- table_to_matrix(tab)
@@ -50,3 +54,8 @@ subwords <- function(x, corpus) {
 #   (subkeys <- LARGER[which(startsWith(LARGER, SMALLER))])
 
 # }
+
+# For each list of words in a vector, find of any are in the list of patters
+contains_any <- function(wordlists, patterns) {
+  sapply(wordlists,function(x,y) any((x %in% y)), y=patterns)
+}
