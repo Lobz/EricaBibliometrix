@@ -15,7 +15,25 @@ dataCSV <- "./input/scopus2023_09_12.csv"
 
 # Converting the loaded files into a R bibliographic dataframe
 M <- convert2df(file=dataCSV, dbsource="scopus",format="csv")
+save(M, file="./input/scopus2023_09_12.RData")
 results <- biblioAnalysis(M)
 
 summary(results, k=10, pause=T, width=130)
-plot(x=results, k=10, pause=T)
+pdf()
+plot(x=results, k=10, pause=F)
+dev.off()
+
+# Conceptual Structure using keywords (method="CA")
+pdf("./output/conceptualstr.pdf")
+CS <- conceptualStructure(
+  M,
+  field = "DE",
+  minDegree = 10,
+  k.max = 20,
+  graph = TRUE,
+  remove.terms = NULL,
+  synonyms = NULL
+)
+dev.off()
+
+CS$graph
