@@ -8,6 +8,7 @@ split_keywords <- function(keywords, sep="\\W+", remove.duplicates=T, remove.ter
 }
 
 make_wordslist <- function(x, ...) {
+  x <- tolower(x)
   lapply(x, split_keywords, ...)
 }
 
@@ -55,13 +56,15 @@ subwords <- function(x, corpus) {
 
 # }
 
+contains_any_array <- function(x,y) any(x %in% y)
+
 # For each list of words in a vector, find of any are in the list of patters
 contains_any <- function(wordlists, patterns) {
-  sapply(wordlists,function(x,y) any((x %in% y)), y=patterns)
+  sapply(wordlists, contains_any_array, y=patterns)
 }
 
 # For each text in a vector, find of any are in the list of patters
 str_contains_any <- function(x, patterns) {
   x <- tolower(x)
-  sapply(data$Title,function(x)any(str_detect(x, patterns)))
+  sapply(x,function(y)any(str_detect(y, patterns)))
 }
