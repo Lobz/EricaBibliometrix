@@ -71,6 +71,7 @@ savePlot("./output/pubsbyyear.png")
 ### Group prevalence per year
 # This line is to complete the year list adding years with no publications
 y <- factor(M$PY, levels=years, ordered=T)
+M$y <- y
 # Make a table of pubs per year per group
 yearFreqTab <- table(y, M$group)
 # Obs: the columns in this tab are:
@@ -94,17 +95,23 @@ stackplot(
 savePlot("./output/pubsbyyeargrouped2023.png")
 
 # Top journals
+# Table number of publications per journal
 journalTab <- sort(table(M$JI), decreasing=T)
 # write.csv(journalTab, "./output/journalTotals.csv")
+
 ## how many elements to plot in the barplot
-maxbars <- 10
-M$y <- y
+maxbars <- 20
+
 mostPubs <- rownames(journalTab[1:maxbars])
-## Reduce super long name
+
+## Yearly number of articles for top sources
 MP <- subset(M, JI %in% mostPubs, select=c("y","JI"))
 journalTabYearly <- table(MP$y, MP$JI)
-# write.csv(journalTabYearly, "./output/journalTop10Yearly.csv")
+write.csv(journalTabYearly, "./output/journalTop10Yearly.csv")
+
+## Reduce super long name
 mostPubs[5] <- "A.V.L. INT. J. GEN. MOL. MICROBIOL."
+## Barplot
 par(mar=c(5,15,1,1))
 barplot(journalTab[1:maxbars],
   col = 1,
@@ -112,7 +119,7 @@ barplot(journalTab[1:maxbars],
   names.arg = mostPubs,
   horiz=T,
   las=1)
-
+savePlot("./output/topJournals.png")
 
 # Pubz per year per subject
 
