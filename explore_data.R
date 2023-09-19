@@ -71,26 +71,25 @@ savePlot("./output/pubsbyyear.png")
 y <- factor(data$Year, levels=years, ordered=T)
 # Make a table of pubs per year per group
 yearFreqTab <- table(y, data$group)
-names(yearFre)
-# look at the table
-yearFreqTab
 # Obs: the columns in this tab are:
 # 1: neither
 # 2: climate change
-#
+# 3: recovery
+# 4: both
+# Let's change to a better order:
+yearFreqTab <- yearFreqTab[,c(1,3,4,2)]
+write.csv(yearFreqTab,"./output/yearFreqTab.csv")
 
 # stack plot
 # Compare this to the previous plot to see that the upper line is the same, since values are stacked
-#
 stackplot(
-  yearFreqTab[,c(1,2,4,3)],
-  main="Articles per year",
-  xlab="Time",
-  ylab="Number of articles",
-  col=c("grey","red","magenta","blue"),
-  legend=c("neither", "climate change", "both", "recovery"))
+  yearFreqTab,
+  main="Articles per year", # Title
+  xlab="Time", # X axis name
+  ylab="Number of articles", # Y axis name
+  col=c("grey","red","magenta","blue"), # Colors (one for each category)
+  legend=colnames(yearFreqTab))
 savePlot("./output/pubsbyyeargrouped2023.png")
-
 
 # Top journals
 # Pubz per year per subject

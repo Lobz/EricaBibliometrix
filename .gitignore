@@ -1,6 +1,5 @@
-# ignore input and output files, and all data files
+# ignore input files, and R files
 input/
-*.csv
 *.Rdata
 *.RData
 *.RHistory
