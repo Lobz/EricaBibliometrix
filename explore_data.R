@@ -18,7 +18,9 @@ recoveryWords <- c("recovery", "microbial succession", "reforestation", "replant
 
 ### Extract keywords (set sep as the separator between keywords)
 (keywordTab <- make_word_table(data$Index.Keywords, min.Freq = 1, sep = "; "))
+write.csv(keywordTab[1:200,], "./output/IDkeywordTable.csv")
 (authorKeywordTab <- make_word_table(data$Author.Keywords, min.Freq = 1, sep = "; "))
+write.csv(authorKeywordTab[1:200,], "./output/AUkeywordTable.csv")
 
 ### Find a list of keywords containing the keywords for each group:
 keywords <- list_unique(c(rownames(keywordTab), (rownames(authorKeywordTab))))
