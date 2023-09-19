@@ -60,8 +60,8 @@ summary(M$group)
 #### Plots/tables we want:
 # Pubs per year
 ### Plot by year (barplot)
-lastYear <- max(M$PY)
-firstYear <- min(M$PY)
+lastYear <- max(M$PY) #2023
+firstYear <- min(M$PY) #1959
 numberofyears <- lastYear - firstYear +1
 years <- firstYear:lastYear
 yearFreq <- table(M$PY)
@@ -94,6 +94,24 @@ stackplot(
 savePlot("./output/pubsbyyeargrouped2023.png")
 
 # Top journals
+journalTab <- sort(table(data$Source.title), decreasing=T)
+write.csv(journalTab, "./output/journalTotals.csv")
+## how many elements to plot in the barplot
+maxbars <- 10
+data$y <- y
+mostPubs <- rownames(journalTab[1:maxbars])
+dataP <- subset(data, Source.title %in% mostPubs, select=c("y","Source.title"))
+journalTabYearly <- table(dataP$y, dataP$Source.title)
+write.csv(journalTabYearly, "./output/journalTop10Yearly.csv")
+par(mar=c(5,15,1,1))
+barplot(journalTab[1:maxbars],
+  col = 1,
+  xlab = "Number of articles",
+  names.arg = row.names(journalTab)[1:maxbars],
+  horiz=T,
+  las=2)
+
+
 # Pubz per year per subject
 
 res <- fieldByYear(M, field = "ID", min.freq = 10, n.items = 10, graph = TRUE)
@@ -104,13 +122,11 @@ mostCited <- data[order(data$Cited.by, decreasing=T),][1:10,]
 hist(data$Cited.by, main="Distribution of citations", xlab="Number of citations", ylab="Number of articles")
 # Country of origin?
 # Most used words (title, auth-keyword, ind-keywords, separate tables)
-## how many keywords to plot in the barplot
-maxwords <- 10
 
 par(mar=c(5,12,1,1))
-barplot(keywordTab$Rel.Freq[1:maxwords], col = 1, xlab = "Percentage of articles", names.arg = row.names(keywordTab)[1:maxwords], horiz=T, las=2)
+barplot(keywordTab$Rel.Freq[1:maxbars], col = 1, xlab = "Percentage of articles", names.arg = row.names(keywordTab)[1:maxbars], horiz=T, las=2)
 savePlot("output/indexkeywords.png")
 
 par(mar=c(5,12,1,1))
-barplot(authorKeywordTab$Rel.Freq[1:maxwords], col = 1, xlab = "Percentage of articles", names.arg = row.names(authorKeywordTab)[1:maxwords], horiz=T, las=2)
+barplot(authorKeywordTab$Rel.Freq[1:maxbars], col = 1, xlab = "Percentage of articles", names.arg = row.names(authorKeywordTab)[1:maxbars], horiz=T, las=2)
 savePlot("output/authorkeywords.png")
