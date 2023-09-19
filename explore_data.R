@@ -121,7 +121,10 @@ res <- fieldByYear(M, field = "ID", min.freq = 10, n.items = 10, graph = TRUE)
 mostCited <- data[order(data$Cited.by, decreasing=T),][1:10,]
 
 # Distribution of citation and author afilliation
-hist(data$Cited.by, main="Distribution of citations", xlab="Number of citations", ylab="Number of articles")
+hist(data$Cited.by,
+  main="Distribution of citations",
+  xlab="Number of citations",
+  ylab="Number of articles")
 # Country of origin?
 # Most used words (title, auth-keyword, ind-keywords, separate tables)
 
@@ -136,9 +139,9 @@ savePlot("output/indexkeywords.png")
 
 par(mar=c(5,12,1,1))
 barplot(authorKeywordTab$Rel.Freq[1:maxbars],
-col = 1,
-xlab = "Percentage of articles",
-names.arg = row.names(authorKeywordTab)[1:maxbars],
-horiz=T,
-las=1)
+  col = 1,
+  xlab = "Percentage of articles",
+  names.arg = row.names(authorKeywordTab)[1:maxbars],
+  horiz=T,
+  las=1)
 savePlot("output/authorkeywords.png")
