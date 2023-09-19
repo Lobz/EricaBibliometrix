@@ -94,22 +94,24 @@ stackplot(
 savePlot("./output/pubsbyyeargrouped2023.png")
 
 # Top journals
-journalTab <- sort(table(data$Source.title), decreasing=T)
-write.csv(journalTab, "./output/journalTotals.csv")
+journalTab <- sort(table(M$JI), decreasing=T)
+# write.csv(journalTab, "./output/journalTotals.csv")
 ## how many elements to plot in the barplot
 maxbars <- 10
-data$y <- y
+M$y <- y
 mostPubs <- rownames(journalTab[1:maxbars])
-dataP <- subset(data, Source.title %in% mostPubs, select=c("y","Source.title"))
-journalTabYearly <- table(dataP$y, dataP$Source.title)
-write.csv(journalTabYearly, "./output/journalTop10Yearly.csv")
+## Reduce super long name
+MP <- subset(M, JI %in% mostPubs, select=c("y","JI"))
+journalTabYearly <- table(MP$y, MP$JI)
+# write.csv(journalTabYearly, "./output/journalTop10Yearly.csv")
+mostPubs[5] <- "A.V.L. INT. J. GEN. MOL. MICROBIOL."
 par(mar=c(5,15,1,1))
 barplot(journalTab[1:maxbars],
   col = 1,
   xlab = "Number of articles",
-  names.arg = row.names(journalTab)[1:maxbars],
+  names.arg = mostPubs,
   horiz=T,
-  las=2)
+  las=1)
 
 
 # Pubz per year per subject
@@ -124,9 +126,19 @@ hist(data$Cited.by, main="Distribution of citations", xlab="Number of citations"
 # Most used words (title, auth-keyword, ind-keywords, separate tables)
 
 par(mar=c(5,12,1,1))
-barplot(keywordTab$Rel.Freq[1:maxbars], col = 1, xlab = "Percentage of articles", names.arg = row.names(keywordTab)[1:maxbars], horiz=T, las=2)
+barplot(keywordTab$Rel.Freq[1:maxbars],
+  col = 1,
+  xlab = "Percentage of articles",
+  names.arg = row.names(keywordTab)[1:maxbars],
+  horiz=T,
+  las=1)
 savePlot("output/indexkeywords.png")
 
 par(mar=c(5,12,1,1))
-barplot(authorKeywordTab$Rel.Freq[1:maxbars], col = 1, xlab = "Percentage of articles", names.arg = row.names(authorKeywordTab)[1:maxbars], horiz=T, las=2)
+barplot(authorKeywordTab$Rel.Freq[1:maxbars],
+col = 1,
+xlab = "Percentage of articles",
+names.arg = row.names(authorKeywordTab)[1:maxbars],
+horiz=T,
+las=1)
 savePlot("output/authorkeywords.png")
