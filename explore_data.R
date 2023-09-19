@@ -8,7 +8,7 @@ sapply(list.files(libDir, full.names = T), source)
 
 # load data
 load(dataFilenameRData)
-#data <- my_read.csv(dataFilenameCSV)
+data <- my_read.csv(dataFilenameCSV)
 names(data)
 
 ### Subgroups defined by presence of these terms in Title or Abstract or Keywords, or terms containing these in Keywords
@@ -46,7 +46,7 @@ data$recoveryWords <- str_contains_any(data$Title, recoveryWords) | str_contains
 ### Join keyword and word groups
 data$climateGroup <- data$climateKeywords | data$climateWords
 data$recoveryGroup <- data$recoveryKeywords | data$recoveryWords
-### Create a factor for groups
+### Create a factor for groups by using binary math
 # 0: none
 # 1: climate
 # 2: recovery
@@ -66,11 +66,29 @@ yearFreq <- table(data$Year)
 plot(yearFreq, main="", xlab="Time", ylab="Number of articles", type="l")
 savePlot("./output/pubsbyyear.png")
 
-# Group prevalence per year
+### Group prevalence per year
+# This line is to complete the year list adding years with no publications
 y <- factor(data$Year, levels=years, ordered=T)
+# Make a table of pubs per year per group
 yearFreqTab <- table(y, data$group)
-# climate
-stackplot(yearFreqTab[,c(1,2,4,3)], main="Articles per year", xlab="Time", ylab="Number of articles", col=c("grey","red","magenta","blue"), legend=c("neither", "climate change", "both", "recovery"))
+names(yearFre)
+# look at the table
+yearFreqTab
+# Obs: the columns in this tab are:
+# 1: neither
+# 2: climate change
+#
+
+# stack plot
+# Compare this to the previous plot to see that the upper line is the same, since values are stacked
+#
+stackplot(
+  yearFreqTab[,c(1,2,4,3)],
+  main="Articles per year",
+  xlab="Time",
+  ylab="Number of articles",
+  col=c("grey","red","magenta","blue"),
+  legend=c("neither", "climate change", "both", "recovery"))
 savePlot("./output/pubsbyyeargrouped2023.png")
 
 

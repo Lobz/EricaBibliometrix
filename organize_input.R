@@ -19,9 +19,6 @@ libDir <- "lib"
 # load all files listed in libs
 sapply(list.files(libDir, full.names = T), source)
 
-# load all files listes in libs
-sapply(paste0(libDir,"/",libs), source)
-
 # read all files
 my_files<- list.files(inputFilesDir, pattern=".*.csv", full.names=T)
 my_files

@@ -18,7 +18,7 @@ M <- convert2df(file=dataCSV, dbsource="scopus",format="csv")
 save(M, file="./input/scopus2023_09_12.RData")
 results <- biblioAnalysis(M)
 
-summary(results, k=10, pause=T, width=130)
+summary(results, k=10, pause=F, width=130)
 pdf()
 plot(x=results, k=10, pause=F)
 dev.off()
