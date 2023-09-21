@@ -67,4 +67,7 @@ E as seguintes tabelas:
 - Artigos mais citados
 - Revistas com maior número de publicações
 - Revistas com maior número de citações totais
-- Keywords mais frequentes
+- Author Keywords mais frequentes
+- Index keywords mais frequentes
+- Author Keywords mais frequentes para cada grupo
+- Index Keywords mais frequentes para cada grupo

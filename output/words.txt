@@ -1247,7 +1247,6 @@
 9th
 9z
 9β
-a
 à
 a1
 a15
@@ -1292,12 +1291,9 @@ abh09
 abilities
 ability
 abiotic
-able
 abnormalities
 aborted
 abortions
-about
-above
 aboveground
 abs
 abscission
@@ -1356,9 +1352,6 @@ accompanied
 accompanying
 accomplish
 accomplished
-accordance
-according
-accordingly
 account
 accounted
 accounting
@@ -1431,10 +1424,8 @@ acquired
 acquiring
 acquisition
 acre
-across
 acrostichum
 acrylate
-act
 act2
 acted
 acticity
@@ -1487,7 +1478,6 @@ adapted
 adaption
 adaptive
 add
-added
 adding
 addition
 additional
@@ -1559,9 +1549,6 @@ aeruginosus
 aestuarii
 af
 affect
-affected
-affecting
-affects
 affiliated
 affiliations
 affinities
@@ -1577,13 +1564,9 @@ africa
 african
 africana
 aft
-after
-afterwards
 afy
 afz
 ag
-again
-against
 agallocha
 agaml
 agar
@@ -1694,7 +1677,6 @@ alkane
 alkanes
 alkuna
 alkyl
-all
 allelopathic
 alleviate
 alleviated
@@ -1710,9 +1692,6 @@ allowing
 allows
 alluvial
 almacenes
-almost
-alone
-along
 alongi
 alongside
 alp
@@ -1721,8 +1700,6 @@ alphaproteobacteria
 alpine
 alpo4
 alps
-already
-also
 alswat
 altentative
 alter
@@ -1743,15 +1720,12 @@ alterococcaeae
 alteromonas
 alters
 althioticus
-although
 altitudinal
 altitudinis
 altogether
 alui
 aluminum
-always
 aly1281
-am
 am105t
 ama
 ama49
@@ -1797,8 +1771,6 @@ amoa
 amoa1f
 amoa2r
 amob
-among
-amongst
 amorosia
 amorphous
 amount
@@ -1828,7 +1800,6 @@ amylolytic
 amylolytica
 amylolyticus
 amylovora
-an
 an1
 anabaena
 anabolic
@@ -1862,7 +1833,6 @@ anamorphic
 anatomically
 anatomy
 ancient
-and
 and13c
 andaman
 andamanensis
@@ -1897,7 +1867,6 @@ annavarapu
 annotate
 annotated
 annotation
-announce
 annual
 annularins
 annum
@@ -1905,7 +1874,6 @@ anode
 anodic
 anopheles
 anosim
-another
 anova
 anoxia
 anoxic
@@ -1971,7 +1939,6 @@ antri
 ants
 anukcjv1
 anwar
-any
 ao
 aoa
 aob
@@ -1988,7 +1955,6 @@ api
 apiculata
 apoptosis
 apparent
-apparently
 appear
 appearance
 appeared
@@ -2008,7 +1974,6 @@ approach
 approached
 approaches
 appropriate
-approximately
 apra
 apramycin
 april
@@ -2050,7 +2015,6 @@ archive
 archives
 arctic
 ardra
-are
 area
 areal
 areas
@@ -2077,7 +2041,6 @@ aromatics
 aromatization
 aromatoleum
 arora
-around
 arranged
 arrangements
 array
@@ -2103,7 +2066,6 @@ arundinaceum
 aryabhattai
 arylsulfatase
 arylsulphatase
-as
 as1
 as2
 as3
@@ -2189,7 +2151,6 @@ astrobiology
 astronyxis
 asukamycin
 asy5
-at
 atcc
 atcc6538
 atenuación
@@ -2269,7 +2230,6 @@ autumn
 auxiliary
 av
 availability
-available
 avenue
 average
 averaged
@@ -2282,7 +2242,6 @@ avoid
 avs
 avtd
 awamori
-away
 awcd
 axenic
 axis
@@ -2300,7 +2259,6 @@ azotobacteria
 azotobacterisation
 azotobacters
 azotoformans
-b
 b1
 b16
 b2
@@ -2330,7 +2288,6 @@ bacillu
 bacillus
 bacillusacanthi
 bacilluscereus
-back
 background
 backwater
 backwaters
@@ -2453,7 +2410,6 @@ bcrc14011
 bctp
 bd2
 bde
-be
 beach
 beaches
 beads
@@ -2461,23 +2417,15 @@ bean
 bear
 bearable
 bearing
-became
-because
-become
-becoming
 bed
 beef
-been
-before
 began
-beginning
 begun
 behalf
 behavior
 behaviors
 behaviour
 behavioural
-behind
 behnken
 bei
 beibu
@@ -2485,7 +2433,6 @@ beigongshangensis
 beihai
 beijerinckii
 beilun
-being
 beings
 bel
 believed
@@ -2495,7 +2442,6 @@ belong
 belonged
 belonging
 belongs
-below
 belowground
 belt
 belts
@@ -2528,15 +2474,11 @@ berghei
 berlin
 bertioga
 besar
-beside
-besides
 besimilar
 best
 beta
 betaproteobacteria
 better
-between
-beyond
 bezerra
 bg
 bgc
@@ -2776,7 +2718,6 @@ borstelensis
 bosques
 botanica
 botanical
-both
 botryoisocoumarin
 botrytis
 bottleneck
@@ -2837,7 +2778,6 @@ brevis
 brevitalea
 brevundimonas
 bridge
-brief
 brightness
 brilliant
 brine
@@ -2918,7 +2858,6 @@ burst
 bushneil
 bushnell
 business
-but
 butanediol
 butanoic
 butenolide
@@ -2931,12 +2870,10 @@ butyrate
 butyrolactone
 búzios
 bvca
-by
 bypass
 byproduct
 byproducts
 byrsina
-c
 c1
 c10
 c10h13no
@@ -2966,7 +2903,6 @@ c4
 c6
 c8
 c9h20n2o2
-ca
 ca2
 ca3
 caat5
@@ -3015,7 +2951,6 @@ campinas
 camptoceras
 campus
 campylobacteria
-can
 canada
 canadian
 canarius
@@ -3028,7 +2963,6 @@ candidates
 candidatus
 candidiasis
 canine
-cannot
 canola
 canonical
 canopies
@@ -3131,9 +3065,7 @@ caudal
 caudimaculatus
 causal
 causative
-cause
 caused
-causes
 causing
 cavendish
 caviae
@@ -3207,7 +3139,6 @@ cerevaceae
 ceriops
 cerophyl
 cerrado
-certain
 cerus
 cervical
 ces
@@ -3492,7 +3423,6 @@ cmaa
 cmc
 cmcase
 cmorph
-co
 co2
 coa
 coacervatus
@@ -3584,7 +3514,6 @@ colourless
 colpodida
 colpodids
 column
-com
 comammox
 comamonas
 comb
@@ -3598,8 +3527,6 @@ combining
 combretaceae
 combustion
 comde
-come
-comes
 coming
 commensurately
 commercial
@@ -3796,10 +3723,7 @@ consumers
 consuming
 consumption
 contact
-contain
 contained
-containing
-contains
 contaminación
 contaminado
 contaminant
@@ -3930,7 +3854,6 @@ costs
 cosubstrates
 cosy
 cotton
-could
 council
 count
 counted
@@ -4107,7 +4030,6 @@ cytotoxicity
 czapek
 czca
 czech
-d
 d1
 d10
 d2
@@ -4145,7 +4067,6 @@ database
 databases
 dataset
 datasets
-date
 dated
 dates
 datura
@@ -4511,7 +4432,6 @@ dickeya
 diclinum
 dictyosporae
 dictyosporites
-did
 didehydroechinulin
 didymosporae
 die
@@ -4529,7 +4449,6 @@ differ
 differed
 difference
 differences
-different
 differentforms
 differential
 differentially
@@ -4735,7 +4654,6 @@ dnra
 dns
 dnsa
 dntfn
-do
 doc
 dockerin
 docking
@@ -4744,7 +4662,6 @@ documented
 dodecahydro
 dodecane
 dodecyl
-does
 dokdonensis
 domain
 domains
@@ -4759,7 +4676,6 @@ dominating
 dominican
 don
 donate
-done
 dongzhai
 dongzhaigang
 donia
@@ -4782,7 +4698,6 @@ double
 doubled
 doublet
 doubling
-down
 downregulated
 downshock
 downstream
@@ -4843,7 +4758,6 @@ du145
 dual
 duangjai
 ducing
-due
 dumort
 dumped
 dumping
@@ -4852,7 +4766,6 @@ dung
 duplicate
 durability
 duration
-during
 durusdinium
 dust
 dverse
@@ -4870,7 +4783,6 @@ dynamics
 dyp
 dyp1
 dyps
-e
 e1
 e2
 e2774
@@ -4880,7 +4792,6 @@ ea
 ea1
 ea1t
 eac
-each
 eamm
 ear
 earlier
@@ -4952,7 +4863,6 @@ ee2
 eeas
 eeco
 efb
-effect
 effective
 effectively
 effectiveness
@@ -4979,11 +4889,8 @@ ehrlich
 eia
 eicchornia
 eichhornia
-eight
 eighteen
-eighty
 eims
-either
 ek
 el
 elaborated
@@ -5028,9 +4935,7 @@ elongate
 elongated
 elongation
 elongisporus
-else
 elsevier
-elsewhere
 elucidate
 elucidated
 elucidates
@@ -5104,7 +5009,6 @@ encouraging
 encroach
 encroaching
 encroachment
-end
 endangered
 endangering
 endemic
@@ -5152,7 +5056,6 @@ enlightening
 enoic
 enone
 enormous
-enough
 enp
 enrich
 enriched
@@ -5255,7 +5158,6 @@ esf2m
 esi
 esims
 eskape
-especially
 espinoza
 esporos
 essential
@@ -5290,8 +5192,6 @@ estuarianus
 estuaries
 estuarine
 estuary
-et
-etc
 ethanol
 ethene
 ether
@@ -5342,15 +5242,12 @@ evaluating
 evaluation
 evaporation
 evapotranspiration
-even
 event
 events
 eventually
-ever
 everglades
 evergreen
 everlasting
-every
 evidence
 evidenced
 evidences
@@ -5363,7 +5260,6 @@ evolutionarily
 evolutionary
 evolve
 evolved
-ex
 exacerbate
 exacerbated
 exact
@@ -5383,7 +5279,6 @@ exceeding
 excel
 excellent
 excels
-except
 exception
 exceptional
 excess
@@ -5506,7 +5401,6 @@ exuded
 exuding
 ez1
 ez3
-f
 f1f0
 f30
 f3a
@@ -5553,7 +5447,6 @@ family
 fang
 fapesp
 faprotax
-far
 faridah
 farmaceuticas
 farming
@@ -5641,7 +5534,6 @@ fertilizers
 fertilizing
 fes2
 fesem
-few
 fewer
 fibrobacteres
 fibrous
@@ -5652,7 +5544,6 @@ field
 fields
 fieldwork
 fifteen
-fifth
 fifty
 fighting
 figure
@@ -5685,7 +5576,6 @@ fipronil
 firmicutes
 firmly
 firmus
-first
 firstly
 fisch
 fischeri
@@ -5702,8 +5592,6 @@ fitri
 fits
 fitted
 fitting
-five
-fix
 fixation
 fixed
 fixers
@@ -5805,16 +5693,12 @@ foliarum
 folin
 folk
 follow
-followed
-following
-follows
 fomes
 fonticella
 food
 foodborne
 foodpreferenceontelescopiumtelescopium
 foods
-for
 foraging
 force
 forced
@@ -5835,7 +5719,6 @@ formation
 formations
 formative
 formed
-former
 formic
 formicidae
 forming
@@ -5849,15 +5732,12 @@ formulation
 formulations
 forsk
 forssk
-forth
 forty
 forward
 fosmid
 fossil
 fouling
-found
 foundation
-four
 fourier
 fourteen
 fourth
@@ -5900,7 +5780,6 @@ fringe
 fringed
 fringing
 frog
-from
 frommangrove
 frontal
 frontoventral
@@ -5957,8 +5836,6 @@ funpec
 furanone
 furnissii
 furo
-further
-furthermore
 fusarium
 fuse
 fusi
@@ -5969,7 +5846,6 @@ fussy
 futian
 future
 fw
-g
 g21
 g21t
 gaiella
@@ -6017,7 +5893,6 @@ gate
 gathered
 gause
 gaussian
-gave
 gazi
 gbpb
 gc
@@ -6102,7 +5977,6 @@ germany
 germinans
 germinating
 germination
-get
 ggdc
 ggt
 gh10
@@ -6144,10 +6018,6 @@ gimn4
 gio
 gippsland
 girth
-give
-given
-gives
-giving
 gku
 gl1
 gl2
@@ -6235,7 +6105,6 @@ gor
 gordonia
 gorontalo
 gos_293
-got
 goud
 gov
 govern
@@ -6367,7 +6236,6 @@ gypseum
 gypsiferous
 gypsum
 gyrb
-h
 h0
 h1
 h10
@@ -6395,7 +6263,6 @@ haas
 habitat
 habitats
 hacat
-had
 haeiii
 haemolysin
 haemolysis
@@ -6454,7 +6321,6 @@ hao
 hapa
 happen
 happened
-happens
 happiness
 hapr
 haque
@@ -6467,7 +6333,6 @@ harboured
 harbouring
 harbours
 hard
-hardly
 hardness
 hardy
 harmful
@@ -6480,13 +6345,10 @@ harvested
 harvesting
 harveyi
 harzianum
-has
 hasbiyan
 hass
 hatcheries
 hausmannite
-have
-having
 haydon
 hayes
 hazard
@@ -6502,7 +6364,6 @@ hct
 hct116
 hdb
 hdpe
-he
 head
 heading
 headspace
@@ -6537,7 +6398,6 @@ helps
 hematite
 hemicellulose
 hemolytic
-hence
 henry
 hepatocellular
 hepg2
@@ -6550,9 +6410,6 @@ herbivores
 herbivorous
 herbivory
 herbs
-here
-hereby
-herein
 herikudru
 heritage
 heritiera
@@ -6587,7 +6444,6 @@ hg2
 hgap
 hgt
 hh
-hi
 hibiscus
 hidayat
 hidden
@@ -6606,7 +6462,6 @@ hindered
 hint
 hints
 hir16
-his
 hiseq
 histopathology
 histoplasma
@@ -6644,7 +6499,6 @@ holguin
 holocene
 holocênicos
 holzer
-home
 homocytous
 homogeneity
 homogeneous
@@ -6684,8 +6538,6 @@ hours
 house
 housekeeping
 housing
-how
-however
 hplc
 hptlc
 hr
@@ -6720,7 +6572,6 @@ humida
 humidity
 humus
 hunan
-hundred
 hundreds
 hunt
 huo
@@ -6827,7 +6678,6 @@ hypoxia
 hypoxic
 hzo
 hzsb
-i
 i2
 ia
 iaa
@@ -6844,7 +6694,6 @@ icl
 icl121
 iconiensis
 icp
-id
 ideal
 identical
 identifed
@@ -6859,9 +6708,7 @@ identity
 ideology
 idiomarina
 idriensis
-ie
 ienqvsdekqcghqd
-if
 ifo
 igeo
 ii
@@ -6890,8 +6737,6 @@ imazapyr
 imbalance
 imidazole
 immature
-immediate
-immediately
 immigration
 immobilisation
 immobilise
@@ -6925,8 +6770,6 @@ implied
 implies
 imply
 implying
-importance
-important
 importantly
 impounded
 impoundment
@@ -6941,12 +6784,10 @@ improvement
 improvements
 improving
 imsnu
-in
 inability
 inaccurate
 inactive
 inappropriate
-inc
 incarnatum
 ince
 incertulas
@@ -6985,7 +6826,6 @@ indefinitely
 independent
 independently
 inderscience
-index
 indexes
 indexing
 india
@@ -7070,7 +6910,6 @@ influx
 influxes
 informa
 informal
-information
 informative
 informs
 infra
@@ -7144,7 +6983,6 @@ instability
 installation
 instance
 instar
-instead
 institut
 institute
 instituto
@@ -7213,7 +7051,6 @@ intervals
 intervention
 intestinalis
 inthe
-into
 intra
 intracellular
 intraerobic
@@ -7284,7 +7121,6 @@ irregularly
 irreplaceable
 irrespective
 irrigation
-is
 is0
 isatidis
 ishwara
@@ -7332,16 +7168,13 @@ israelensis
 issue
 issues
 isyna1
-it
 itaconic
 italiana
 items
 itrax
-its
 its1
 its2
 its4
-itself
 iturin
 iu
 iums
@@ -7349,7 +7182,6 @@ iv
 ivia
 iwoffii
 ix
-j
 j103t
 j3
 j91t
@@ -7422,10 +7254,8 @@ juice
 july
 june
 jungle
-just
 justify
 jx683684
-k
 k1
 k2cro4
 k2hpo4
@@ -7490,7 +7320,6 @@ kf493733
 kfe3
 kfx
 kfy
-kg
 kgaa
 kh2po4
 khaimah
@@ -7527,7 +7356,6 @@ klawalu
 klebseilla
 klebsiella
 kluwer
-km
 km2
 kma08
 kmp456
@@ -7535,10 +7363,8 @@ knaw
 knock
 knoellia
 knot
-know
 knowledge
 knowlege
-known
 ko
 kochii
 kocuria
@@ -7595,7 +7421,6 @@ kx355800
 kx355801
 kx388147
 ky678446
-l
 l16
 l28t
 l75
@@ -7660,7 +7485,6 @@ lant
 lapillicoccus
 lar
 large
-largely
 larger
 largest
 larvae
@@ -7671,13 +7495,11 @@ lasbela
 laser
 lasi
 lasr
-last
 lasted
 lasting
 lastly
 latch
 late
-later
 lateral
 laterite
 lateritic
@@ -7685,7 +7507,6 @@ lateritium
 laterosporus
 latitudes
 latitudinal
-latter
 lattice
 launched
 laverman
@@ -7717,7 +7538,6 @@ leakage
 leaks
 learn
 learned
-least
 leather
 leathers
 leathery
@@ -7744,7 +7564,6 @@ lep
 leptolyngbya
 leptothrix
 les
-less
 lesser
 lessons
 lethal
@@ -7792,9 +7611,7 @@ lignocellulolytic
 lignocellulose
 lignocellulosic
 lignolytic
-like
 likelihood
-likely
 likewise
 limit
 limitation
@@ -7804,7 +7621,6 @@ limiting
 limits
 limonii
 limosum
-line
 lineage
 lineages
 linear
@@ -7844,7 +7660,6 @@ litorisediminis
 litter
 litterbags
 litterfall
-little
 littoral
 littoralis
 liu
@@ -7897,8 +7712,6 @@ longhai
 longibrachiatum
 longipapillum
 longitudinal
-look
-looking
 loop
 loosely
 los
@@ -7921,7 +7734,6 @@ lps
 lr
 lsu
 lt50
-ltd
 ltq
 lu3
 lucensis
@@ -7966,7 +7778,6 @@ lysis
 lysm5
 lysm5t
 lysozyme
-m
 m05
 m1
 m10
@@ -8019,7 +7830,6 @@ macroporous
 macroscopic
 macroscopically
 macroscopy
-made
 madurae
 madurose
 maga
@@ -8040,7 +7850,6 @@ mahidol
 mahogany
 mai
 main
-mainly
 mainstreaming
 maintain
 maintained
@@ -8050,8 +7859,6 @@ maize
 majesty
 major
 majority
-make
-makes
 makeup
 making
 malaccensis
@@ -8120,7 +7927,6 @@ manual
 manufacture
 manufactured
 manure
-many
 mao
 maowei
 maoweihai
@@ -8193,7 +7999,6 @@ mauritius
 maximal
 maximize
 maximum
-may
 mb
 mbc
 mbgb
@@ -8218,10 +8023,7 @@ mds
 me203hg
 meadow
 meal
-mean
 meandering
-means
-meanwhile
 measurable
 measure
 measured
@@ -8288,7 +8090,6 @@ mentagrophytes
 mental
 mentioned
 mercury
-merely
 merheb
 meridianimaribacter
 merits
@@ -8412,7 +8213,6 @@ mfb7
 mfc
 mfcs
 mflucc
-mg
 mg2
 mgl
 mgn
@@ -8506,7 +8306,6 @@ middle
 middletonii
 midlatitude
 mie
-might
 migrates
 migration
 milan
@@ -8518,7 +8317,6 @@ millennia
 miller
 millilitre
 millimeter
-million
 millions
 millipore
 mimic
@@ -8571,7 +8369,6 @@ mk373021
 mk765025
 mk9
 mkd8
-ml
 ml3
 mlbgl
 mlc
@@ -8687,8 +8484,6 @@ months
 moo4
 moors
 moraxella
-more
-moreover
 morib
 moriokaense
 morph
@@ -8711,8 +8506,6 @@ mosquitoes
 mössbauer
 mosseae
 mosses
-most
-mostly
 mote
 moths
 motif
@@ -8727,11 +8520,9 @@ movement
 mozambique
 mp
 mpf
-mr
 mr103
 mreb
 mrg
-mrs
 mrsa
 ms
 ms426
@@ -8749,7 +8540,6 @@ mt483919
 mtcc
 mtdna
 mtt
-much
 mucor
 mucoralean
 mucorales
@@ -8804,7 +8594,6 @@ mushroom
 mushtaq
 musiformis
 mussel
-must
 mutabilis
 mutagen
 mutalib
@@ -8829,7 +8618,6 @@ mw647910
 mw785875
 mxaf
 mxm
-my
 myce
 mycelia
 mycelial
@@ -8875,7 +8663,6 @@ myxobacterial
 myxococcales
 myxococcus
 mz
-n
 n0
 n1
 n1165t
@@ -8884,7 +8671,6 @@ n2o
 n3
 n4
 n50
-na
 na2moo4
 na4
 na6
@@ -8902,9 +8688,7 @@ naimcc
 naked
 nakhon
 nalidixic
-name
 named
-namely
 names
 namibia
 namkhana
@@ -8960,21 +8744,15 @@ nd97
 ndo
 ne
 neap
-near
 nearby
 nearest
-nearly
 neau
-necessarily
-necessary
 necessitates
 necessitating
 necromass
 necrosis
 nectria
-need
 needed
-needs
 neelakantan
 negating
 negative
@@ -8985,7 +8763,6 @@ neighboring
 neighbors
 neighbour
 neighbours
-neither
 nellore
 nematicidal
 nematode
@@ -9022,12 +8799,8 @@ neutral
 neutralized
 neutrophiles
 neutrophilic
-never
-nevertheless
-new
 newly
 newspaper
-next
 nf
 nfapsm
 nfb
@@ -9066,7 +8839,6 @@ nih
 nijhoff
 nil
 nile
-nine
 nineteen
 ninhydrin
 ninth
@@ -9114,7 +8886,6 @@ nmds
 nmol
 nmoln2
 nmr
-no
 no10
 no2
 no3
@@ -9135,12 +8906,9 @@ noesy
 nominally
 nominated
 nomius
-non
 nonamended
 noncompetitive
 nonculturable
-none
-nonetheless
 nonlinear
 nonmetric
 nonomuraea
@@ -9156,12 +8924,10 @@ nontarget
 nontoxic
 nontransformants
 nonvegetated
-nor
 norb
 norfloxacin
 normal
 normalisation
-normally
 normando
 north
 northeast
@@ -9174,11 +8940,8 @@ nortriterpenes
 nosocomial
 nostoc
 nosz
-not
 notable
 notably
-noted
-nothing
 noticeable
 noticeably
 noticed
@@ -9191,7 +8954,6 @@ novelty
 november
 novo
 novosphingobium
-now
 nowadays
 nox
 noxious
@@ -9240,7 +9002,6 @@ nxrb638r
 nypa
 nystatin
 nz1
-o
 o2
 o8a
 oa
@@ -9260,11 +9021,8 @@ observe
 observed
 observing
 obstetric
-obtain
-obtained
 obtaining
 obvious
-obviously
 oc
 occasional
 occasionally
@@ -9310,9 +9068,7 @@ odors
 oecd
 oedochilum
 oes
-of
 of2
-off
 offensive
 offer
 offered
@@ -9321,11 +9077,9 @@ offers
 officinalis
 offsetting
 offshore
-often
 ofu
 ofu1
 ofu29
-oh
 oil
 oil_mgv
 oiled
@@ -9339,7 +9093,6 @@ okinawa
 okra
 ol
 olamine
-old
 older
 oleaginous
 oleanane
@@ -9370,19 +9123,13 @@ om979078
 ombrophilous
 omics
 omnivore
-on
 on362236
-once
 oncorhynchi
-one
-ones
 ongoing
 online
-only
 onset
 onslaught
 ontibacter
-onto
 ontogenetic
 ontogeny
 onygenales
@@ -9417,7 +9164,6 @@ optimized
 optimizing
 optimum
 option
-or
 oral
 orally
 orange
@@ -9475,13 +9221,9 @@ osmolytes
 osmoprotectants
 osmotic
 osmotolerant
-other
-others
 otu
 otus
 oucmdz
-our
-out
 outbreaks
 outcome
 outcomes
@@ -9494,14 +9236,11 @@ outlined
 output
 outputs
 outset
-outside
 outwelling
 oval
 ovatispora
 oven
-over
 overabundant
-overall
 overcome
 overdispersed
 overexpressed
@@ -9519,7 +9258,6 @@ overshadowed
 overthere
 overwhelming
 ovoid
-owing
 oxalate
 oxalic
 oxaline
@@ -9568,7 +9306,6 @@ oxytricha
 oxytrichid
 oxytrichidae
 oyster
-p
 p2
 p388
 p450
@@ -9592,7 +9329,6 @@ paenibacillaceae
 paenibacillus
 paenidigyamycin
 paes
-page
 pah
 pahang
 pahe
@@ -9681,7 +9417,6 @@ paris
 park
 paroecandrum
 paroral
-part
 partial
 partially
 participate
@@ -9690,9 +9425,7 @@ participating
 participation
 particle
 particles
-particular
 particularity
-particularly
 particulate
 particulates
 partition
@@ -9708,7 +9441,6 @@ paspalum
 passat
 passed
 passive
-past
 pasteur
 pasteurii
 pastoris
@@ -9811,7 +9543,6 @@ peptides
 peptidoglycan
 peptidoglycans
 peptone
-per
 perak
 perceived
 percent
@@ -9825,7 +9556,6 @@ performance
 performances
 performed
 performing
-perhaps
 peri
 peribacillus
 peridotites
@@ -10090,7 +9820,6 @@ pl
 pl1
 pl2
 place
-placed
 placement
 places
 placing
@@ -10163,7 +9892,6 @@ ploughs
 pls
 plug
 pluripotens
-plus
 plutella
 pmoa
 pmphb5
@@ -10268,7 +9996,6 @@ pools
 poor
 poorer
 poorest
-poorly
 popular
 popularity
 populated
@@ -10306,8 +10033,6 @@ possessing
 possession
 possibilities
 possibility
-possible
-possibly
 post
 posterior
 posteriorly
@@ -10319,7 +10044,6 @@ potency
 potent
 potential
 potentiality
-potentially
 potentials
 potentiellement
 pots
@@ -10370,7 +10094,6 @@ predictions
 predictors
 predominance
 predominant
-predominantly
 predominated
 prefer
 preferable
@@ -10396,7 +10119,6 @@ prerequisite
 prescribed
 presence
 presences
-present
 presented
 presenting
 presently
@@ -10424,9 +10146,7 @@ prevention
 preventive
 prevents
 previous
-previously
 priestia
-primarily
 primary
 primer
 primers
@@ -10449,7 +10169,6 @@ pro
 proantar
 probability
 probable
-probably
 probing
 problem
 problematic
@@ -10604,7 +10323,6 @@ proven
 provenance
 provide
 provided
-provides
 providing
 province
 provinces
@@ -10690,7 +10408,6 @@ purposes
 purpurea
 purpureocillium
 pusparajah
-put
 putative
 putatively
 puthuvypin
@@ -10733,7 +10450,6 @@ pythiaceae
 pythiales
 pythium
 pzlr4
-q
 q10
 q14t
 q22t
@@ -10804,10 +10520,8 @@ quinone
 quinones
 quinoxaline
 quinquefasciatus
-quite
 quorum
 quotient
-r
 r1
 r14
 r2
@@ -10869,7 +10583,6 @@ rast
 rat
 rate
 rates
-rather
 ratio
 rationale
 ratios
@@ -10886,7 +10599,6 @@ rb4
 rchit
 rda
 rdna
-re
 reach
 reached
 reaches
@@ -10900,7 +10612,6 @@ reactivity
 reactor
 reactors
 read
-readily
 reading
 reads
 ready
@@ -10918,8 +10629,6 @@ recedes
 receive
 received
 receiving
-recent
-recently
 receptor
 recessive
 recharging
@@ -11000,9 +10709,6 @@ refseq
 refuges
 regard
 regarded
-regarding
-regardless
-regards
 regenerated
 regeneration
 regime
@@ -11033,14 +10739,12 @@ rei
 reinforcing
 reiterated
 relate
-related
 relatedness
 relation
 relations
 relationship
 relationships
 relative
-relatively
 relatives
 relativity
 relax
@@ -11125,7 +10829,6 @@ requiring
 rerio
 res
 resazurin
-research
 researched
 researchers
 researching
@@ -11165,7 +10868,6 @@ resource
 resources
 respect
 respective
-respectively
 respiration
 respiratory
 respiring
@@ -11191,9 +10893,6 @@ restricted
 restriction
 result
 resultant
-resulted
-resulting
-results
 resveratrol
 retain
 retained
@@ -11295,7 +10994,6 @@ ridge
 ridges
 riesco
 rifamycinica
-right
 rights
 rigidiuscula
 rimosus
@@ -11396,7 +11094,6 @@ rubrumazines
 ruegeria
 rufiji
 rules
-run
 running
 runoff
 rural
@@ -11413,7 +11110,6 @@ ry10402
 ry11902
 ry11903
 rz
-s
 s1
 s12
 s16
@@ -11457,7 +11153,6 @@ safira
 safy
 sagar
 sahu
-said
 sains
 sakei
 sakhon
@@ -11494,7 +11189,6 @@ saltwater
 salty
 sam
 sambaqui
-same
 sample
 sampled
 sampler
@@ -11636,7 +11330,6 @@ seasons
 seaward
 seawater
 seaweed
-sec
 secalonic
 second
 secondarily
@@ -11647,7 +11340,6 @@ secret
 secreted
 secretion
 secretos
-section
 sections
 sector
 sectors
@@ -11664,16 +11356,11 @@ sediminibacillus
 sediminihabitans
 sediminis
 sediminum
-see
 seed
 seedling
 seedlings
 seeds
 seek
-seem
-seemed
-seems
-seen
 seeps
 segara
 segment
@@ -11693,7 +11380,6 @@ selectivity
 selenastrum
 selenite
 selenium
-self
 selinsing
 sem
 semarang
@@ -11708,7 +11394,6 @@ sensing
 sensitive
 sensitivities
 sensitivity
-sent
 seoulensis
 separate
 separated
@@ -11768,10 +11453,8 @@ settlements
 settling
 setup
 seus
-seven
 seventeen
 seventy
-several
 severe
 severely
 severity
@@ -11791,7 +11474,6 @@ shakeflask
 shaken
 shaker
 shaking
-shall
 shallow
 shamaan
 shandong
@@ -11813,7 +11495,6 @@ shaueriana
 shear
 sheath
 sheaths
-shed
 sheds
 sheikh
 shelf
@@ -11845,12 +11526,7 @@ shorten
 shorter
 shortly
 shotgun
-should
-show
-showed
 showing
-shown
-shows
 shp
 shrimp
 shrinking
@@ -11878,8 +11554,6 @@ signals
 signature
 signatures
 significance
-significant
-significantly
 significantly13
 signifificantly
 signs
@@ -11890,10 +11564,8 @@ silr
 silt
 silty
 silver
-similar
 similarities
 similarity
-similarly
 similiar
 simple
 simpler
@@ -11905,7 +11577,6 @@ simulated
 simulation
 simultaneous
 simultaneously
-since
 sinensis
 singapore
 single
@@ -11925,7 +11596,6 @@ situ
 situated
 situation
 situations
-six
 sixteen
 size
 sized
@@ -11943,7 +11613,6 @@ sl8
 slant
 slices
 slight
-slightly
 slope
 slough
 slow
@@ -11981,7 +11650,6 @@ smx
 snails
 snapshot
 snck
-so
 so4
 so42
 soaked
@@ -12039,9 +11707,6 @@ solvent
 solving
 som
 somatic
-some
-something
-sometimes
 song
 sonho
 sonication
@@ -12104,11 +11769,9 @@ speciation
 specie
 species
 specific
-specifically
 specificities
 specificity
 specififically
-specify
 specimens
 speciosum
 spectinabilin
@@ -12292,7 +11955,6 @@ sterilized
 sterol
 sterols
 stichotrichia
-still
 stimulate
 stimulated
 stimulates
@@ -12310,7 +11972,6 @@ stoichiometric
 stoichiometry
 stomach
 stomata
-stop
 storage
 storages
 store
@@ -12369,7 +12030,6 @@ stroke
 strong
 stronger
 strongest
-strongly
 strontium
 structural
 structurally
@@ -12389,7 +12049,6 @@ stylosa
 sua
 suaeda
 suaedae
-sub
 subbeticus
 subclade
 subcloned
@@ -12427,7 +12086,6 @@ subspecies
 substance
 substances
 substantial
-substantially
 substituted
 substitutions
 substrate
@@ -12441,7 +12099,6 @@ subtropics
 subunit
 success
 successful
-successfully
 succession
 successional
 successions
@@ -12449,7 +12106,6 @@ successive
 successively
 succinate
 succinic
-such
 sucrose
 sudan
 suelo
@@ -12458,11 +12114,9 @@ suffer
 suffered
 sufficiency
 sufficient
-sufficiently
 sugar
 sugarcane
 sugars
-suggest
 suggested
 suggesting
 suggestive
@@ -12517,7 +12171,6 @@ sunlight
 sunlightuv
 sunscreen
 sunscreens
-sup
 super
 superfamilies
 superfamily
@@ -12664,9 +12317,6 @@ tailed
 tailored
 taiwan
 taiwanensis
-take
-taken
-taking
 taklimakan
 talaromyces
 tall
@@ -12750,7 +12400,6 @@ ten
 tend
 tended
 tendency
-tends
 tenericutes
 teng
 tensile
@@ -12814,7 +12463,6 @@ textile
 textural
 texture
 textured
-th
 thaa
 thai
 thailand
@@ -12824,24 +12472,17 @@ thakuran
 thalassobacillus
 thaliana
 thammarat
-than
 thane
-that
 thaumarchaeota
 thaumasium
 thaw
 thb
 thbc
 thc
-the
 the16s
 the16srrna
 theater
-their
 thelephora
-them
-themselves
-then
 theoretical
 theoretically
 theory
@@ -12851,10 +12492,6 @@ theproximal
 therapeutic
 therapeutics
 therapy
-there
-thereafter
-thereby
-therefore
 therelease
 thermal
 thermoanaerobacterium
@@ -12869,10 +12506,8 @@ thermosphacta
 thermostability
 thermostable
 thermus
-these
 thespesia
 thetac
-they
 thha
 thiamine
 thibacillus
@@ -12894,14 +12529,10 @@ third
 thirteen
 thirty
 thiruvarur
-this
 thokottu
 thomson
 thoroughly
-those
-though
 thought
-thousand
 thousands
 thp
 thraustochytrids
@@ -12915,12 +12546,9 @@ threshold
 thresholds
 thrive
 thriving
-through
-throughout
 throughput
 throws
 thuringiensis
-thus
 thuwal
 thwps
 thy
@@ -12945,7 +12573,6 @@ timescales
 timespan
 tionally
 tions
-tip
 tissue
 tissues
 tistr
@@ -12963,11 +12590,9 @@ tm50
 tmp
 tn
 tnc
-to
 toc
 tochigiensis
 tof
-together
 token
 tolc
 tolerance
@@ -12978,8 +12603,6 @@ tolerating
 tomato
 tomyces
 tons
-too
-took
 tool
 toolbox
 toolkit
@@ -13003,8 +12626,6 @@ total
 totally
 totumos
 tourist
-toward
-towards
 toxic
 toxicity
 tóxico
@@ -13112,7 +12733,6 @@ trichosporium
 tricyclic
 tricyclo
 tridecanoic
-tried
 triene
 triggered
 triggers
@@ -13163,7 +12783,6 @@ tryptic
 trypton
 tryptone
 tryptophan
-ts
 ts13
 ts14
 ts4
@@ -13200,10 +12819,8 @@ tvc
 tween
 twelve
 twenty
-twice
 twig
 twin
-two
 twonewoxidized
 type
 types
@@ -13215,7 +12832,6 @@ typical
 typing
 tyr
 tyrosine
-u
 u251
 u87
 uae
@@ -13247,7 +12863,6 @@ ultramafic
 ultrasonic
 ultraviolet
 umol
-un
 unacceptable
 unaffected
 unamended
@@ -13278,7 +12893,6 @@ unculturable
 unculturables
 uncultured
 und
-under
 underestimated
 underestimating
 underexploited
@@ -13337,7 +12951,6 @@ università
 universiti
 university
 unknown
-unlike
 unnamed
 unnecessary
 unoptimized
@@ -13360,18 +12973,15 @@ unsubstituted
 unsuitable
 untapped
 untaps
-until
 untreated
 unusual
 unusually
 unvegetated
 unveiled
 unveils
-up
 upland
 uplc
 uploaded
-upon
 upper
 uppermost
 upregulated
@@ -13388,18 +12998,10 @@ uricase
 uroleptoides
 uromys
 ursane
-us
 usa
 usage
 usba
-use
-used
-useful
-usefulness
-uses
-using
 usual
-usually
 utilise
 utilised
 utilising
@@ -13417,7 +13019,6 @@ uvarum
 uvb
 uvc
 uzzal
-v
 v2
 v3
 v4
@@ -13438,7 +13039,6 @@ validly
 valorization
 valuable
 valuated
-value
 valued
 values
 vam
@@ -13462,7 +13062,6 @@ variegatus
 varies
 varieties
 variety
-various
 variousecologically
 varma
 vartd
@@ -13516,7 +13115,6 @@ vertebrates
 vertical
 verticillioides
 verticillus
-very
 vesicle
 vesicles
 vesicular
@@ -13524,7 +13122,6 @@ vexans
 vgb
 vhca
 vi
-via
 viability
 viable
 vials
@@ -13590,7 +13187,6 @@ vitps7
 vitro
 vivid
 vivo
-viz
 vjds
 vjpr
 vjsy
@@ -13608,7 +13204,6 @@ volcanoes
 voltage
 volume
 vre
-vs
 vsm
 vuk
 vulgaris
@@ -13616,7 +13211,6 @@ vulnerability
 vulnerable
 vulnificus
 vvm
-w
 w2t
 w3
 w77
@@ -13641,7 +13235,6 @@ warming
 warning
 warrant
 warrants
-was
 washed
 washing
 waste
@@ -13661,11 +13254,9 @@ wavenumber
 waves
 wax
 waxes
-way
 ways
 wb15t
 wcc
-we
 weak
 weaken
 weakened
@@ -13685,7 +13276,6 @@ weighed
 weight
 weighted
 weights
-welcome
 welfare
 well
 wellbeing
@@ -13695,7 +13285,6 @@ wenchang
 wenchangensis
 weno
 wenxinia
-were
 west
 western
 wet
@@ -13705,31 +13294,17 @@ wetter
 wgs
 whale
 wharf
-what
 whatsoever
 wheat
 whelk
-when
-where
-whereas
-whereby
-wherein
-whether
 whey
 whgich
-which
 whigham
-while
 whilst
 white
 whitish
-who
-whole
-whose
-why
 wi
 wide
-widely
 wider
 widespread
 width
@@ -13746,9 +13321,6 @@ window
 winter
 wise
 wistar
-with
-within
-without
 witpress
 wl
 wmmb3t
@@ -13762,11 +13334,9 @@ woodrotting
 woody
 work
 works
-world
 worldwide
 worms
 worth
-would
 wound
 wounds
 wouri
@@ -13777,8 +13347,6 @@ wt
 wu
 wuzhishan
 wwtp
-www
-x
 x105cfu
 x7b
 xanthomonas
@@ -13820,7 +13388,6 @@ xylose
 xylostella
 xylulose
 xyn11
-y
 y17
 y22t
 y74
@@ -13844,7 +13411,6 @@ yeasts
 yellow
 yellowish
 yep
-yet
 yield
 yielded
 yielding
@@ -13866,13 +13432,11 @@ yu
 yuanmonensisjcm
 yucatan
 yucatán
-z
 z39
 z6t
 za
 zealand
 zebrafish
-zero
 zerovalent
 zeta
 zh17t

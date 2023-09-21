@@ -78,34 +78,11 @@ groupLevels <- c("neither", "climate change", "recovery", "both")
 data$group <- factor(data$climateGroup + 2*data$recoveryGroup, labels=groupLevels, ordered=F, levels=0:3)
 summary(data$group)
 
-#######################################################################
-################ KEYWORDS AND WORDS ###################################
-#######################################################################
-
-### Extract keywords (set sep as the separator between keywords)
-(keywordTab <- make_word_table(data$Index.Keywords, min.Freq = 1, sep = "; "))
-write.csv(keywordTab[1:200,], "./output/IDkeywordTable.csv")
-(authorKeywordTab <- make_word_table(data$Author.Keywords, min.Freq = 1, sep = "; "))
-write.csv(authorKeywordTab[1:200,], "./output/AUkeywordTable.csv")
-
-### Extract word from text
-my_stopwords = bibliometrix::stopwords$en
-titleWords <- make_word_table(data$Title, min.Freq=1, remove.terms = my_stopwords)
-abstractWords <- make_word_table(data$Abstract,  min.Freq=1, remove.terms = my_stopwords)
-words <- list_unique(c(rownames(titleWords),rownames(abstractWords)))
-write(words, "./output/words.txt")
-
-## Now, keyword tabs per group
-dataClimate <- subset(data, climateGroup)
-dataRecovery <- subset(data, recoveryGroup)
-(keywordTabClimate <- make_word_table(dataClimate$Index.Keywords, min.Freq = 1, sep = "; "))
-write.csv(keywordTabClimate[1:200,], "./output/IDkeywordTableClimate.csv")
-(authorKeywordTabClimate <- make_word_table(dataClimate$Author.Keywords, min.Freq = 1, sep = "; "))
-write.csv(authorKeywordTabClimate[1:200,], "./output/AUkeywordTableClimate.csv")
-
 ###############################################
 ############# PLOTS AND TABLES ################
 ###############################################
+
+############################# TIMELINE ####################################
 
 ### Plot by year (barplot)
 yearFreq <- table(data$Year)
@@ -135,6 +112,9 @@ stackplot(
   col=c("grey","red","magenta","blue"), # Colors (one for each category)
   legend=colnames(yearFreqTab))
 savePlot("./output/pubsbyyeargrouped2023.png")
+
+
+######################### TOP JOURNALS #########################################
 
 # Top journals
 # Table number of publications per journal
@@ -174,6 +154,8 @@ MP <- subset(data, Source.title %in% mostPubs, select=c("Year","Source.title"))
 journalTabYearly <- table(MP$Year, MP$Source.title)
 write.csv(journalTabYearly, "./output/journalTop10Yearly.csv")
 
+########################## TOP ARTICLES ########################################
+
 ## Most cited articles
 mostCited <- data[order(data$Cited.by, decreasing=T),c("authorstr", "Year", "Source.title", "Cited.by")]
 my_write.csv(mostCited, "./output/mostcited.csv")
@@ -188,7 +170,36 @@ savePlot("output/distCitations.png")
 # Country of origin?
 ## Easier to do this w bibliometrix
 
-# Most used words (title, author-keyword, index-keywords, separate tables)
+################ KEYWORDS AND WORDS ###################################
+
+### Extract keywords (set sep as the separator between keywords)
+(keywordTab <- make_word_table(data$Index.Keywords, min.Freq = 1, sep = "; "))
+write.csv(keywordTab[1:200,], "./output/IDkeywordTable.csv")
+(authorKeywordTab <- make_word_table(data$Author.Keywords, min.Freq = 1, sep = "; "))
+write.csv(authorKeywordTab[1:200,], "./output/AUkeywordTable.csv")
+
+### Extract word from text
+my_stopwords = bibliometrix::stopwords$en
+titleWords <- make_word_table(data$Title, min.Freq=1, remove.terms = my_stopwords)
+write.csv(titleWords, "titleWords.csv")
+abstractWords <- make_word_table(data$Abstract,  min.Freq=1, remove.terms = my_stopwords)
+write.csv(abstractWords, "abstractWords.csv")
+words <- list_unique(c(rownames(titleWords),rownames(abstractWords)))
+write(words, "./output/words.txt")
+
+## Now, keyword tabs per group
+dataClimate <- subset(data, climateGroup)
+dataRecovery <- subset(data, recoveryGroup)
+(keywordTabClimate <- make_word_table(dataClimate$Index.Keywords, min.Freq = 1, sep = "; "))
+write.csv(keywordTabClimate[1:200,], "./output/IDkeywordTableClimate.csv")
+(authorKeywordTabClimate <- make_word_table(dataClimate$Author.Keywords, min.Freq = 1, sep = "; "))
+write.csv(authorKeywordTabClimate[1:200,], "./output/AUkeywordTableClimate.csv")
+
+(keywordTabRecovery <- make_word_table(dataRecovery$Index.Keywords, min.Freq = 1, sep = "; "))
+write.csv(keywordTabRecovery[1:200,], "./output/IDkeywordTableRecovery.csv")
+(authorKeywordTabRecovery <- make_word_table(dataRecovery$Author.Keywords, min.Freq = 1, sep = "; "))
+write.csv(authorKeywordTabRecovery[1:200,], "./output/AUkeywordTableRecovery.csv")
+### KEYWORD PLOTS
 # index keywords
 par(mar=c(5,12,1,2))
 barplot(keywordTab$Freq[maxbars:1],
