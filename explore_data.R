@@ -5,7 +5,6 @@ dataFilenameRData <- "./input/scopus2023_09_12.RData"
 libDir <- "lib"
 # load all files listed in libs
 sapply(list.files(libDir, full.names = T), source)
-library(bibliometrix)
 
 # load data
 load(dataFilenameRData)
@@ -40,21 +39,21 @@ data$authorstr <- sapply(strsplit(data$Authors, "; "), authorstr)
 #######################################################################
 
 ### Extract keywords (set sep as the separator between keywords)
-(keywordTab <- make_word_table(M$ID, min.Freq = 1, sep = "; "))
+(keywordTab <- make_word_table(data$Index.Keywords, min.Freq = 1, sep = "; "))
 write.csv(keywordTab[1:200,], "./output/IDkeywordTable.csv")
-(authorKeywordTab <- make_word_table(M$DE, min.Freq = 1, sep = "; "))
+(authorKeywordTab <- make_word_table(data$Author.Keywords, min.Freq = 1, sep = "; "))
 write.csv(authorKeywordTab[1:200,], "./output/AUkeywordTable.csv")
 
 keywords <- list_unique(c(rownames(keywordTab), (rownames(authorKeywordTab))))
 write(keywords, "./output/keywords.txt")
 
-wordlistsAK <- make_wordslist(M$DE, sep="; ")
-wordlistsIK <- make_wordslist(M$ID, sep="; ")
+wordlistsAK <- make_wordslist(data$Author.Keywords, sep="; ")
+wordlistsIK <- make_wordslist(data$Index.Keywords, sep="; ")
 
 ### Extract word from text
 my_stopwords = bibliometrix::stopwords$en
-titleWords <- make_word_table(M$TI, min.Freq=1, remove.terms = my_stopwords)
-abstractWords <- make_word_table(M$AB,  min.Freq=1, remove.terms = my_stopwords)
+titleWords <- make_word_table(data$Title, min.Freq=1, remove.terms = my_stopwords)
+abstractWords <- make_word_table(data$Abstract,  min.Freq=1, remove.terms = my_stopwords)
 words <- list_unique(c(rownames(titleWords),rownames(abstractWords)))
 write(words, "./output/words.txt")
 
@@ -73,16 +72,16 @@ climateChangeKeywords <- subwords(climateChangeWords, keywords)
 recoveryKeywords <- subwords(recoveryWords, keywords)
 
 ### Set a variable to list if a document contains keywords the keywords selected
-M$climateKeywords <- contains_any(wordlistsAK, climateChangeKeywords) | contains_any(wordlistsIK, climateChangeKeywords)
-M$recoveryKeywords <- contains_any(wordlistsAK, recoveryKeywords) | contains_any(wordlistsIK, recoveryKeywords)
+data$climateKeywords <- contains_any(wordlistsAK, climateChangeKeywords) | contains_any(wordlistsIK, climateChangeKeywords)
+data$recoveryKeywords <- contains_any(wordlistsAK, recoveryKeywords) | contains_any(wordlistsIK, recoveryKeywords)
 
 ### And now with abstract and title words
-M$climateWords <- str_contains_any(M$TI, climateChangeWords) | str_contains_any(M$AB, climateChangeWords)
-M$recoveryWords <- str_contains_any(M$TI, recoveryWords) | str_contains_any(M$AB, recoveryWords)
+data$climateWords <- str_contains_any(data$Title, climateChangeWords) | str_contains_any(data$Abstract, climateChangeWords)
+data$recoveryWords <- str_contains_any(data$Title, recoveryWords) | str_contains_any(data$Abstract, recoveryWords)
 
 ### Join keyword and word groups
-M$climateGroup <- M$climateKeywords | M$climateWords
-M$recoveryGroup <- M$recoveryKeywords | M$recoveryWords
+data$climateGroup <- data$climateKeywords | data$climateWords
+data$recoveryGroup <- data$recoveryKeywords | data$recoveryWords
 
 ### Create a factor for groups by using binary math
 # 0: none
@@ -90,24 +89,24 @@ M$recoveryGroup <- M$recoveryKeywords | M$recoveryWords
 # 2: recovery
 # 3: both
 groupLevels <- c("neither", "climate change", "recovery", "both")
-M$group <- factor(M$climateGroup + 2*M$recoveryGroup, labels=groupLevels, ordered=F, levels=0:3)
-summary(M$group)
+data$group <- factor(data$climateGroup + 2*data$recoveryGroup, labels=groupLevels, ordered=F, levels=0:3)
+summary(data$group)
 
 ###############################################
 ############# PLOTS AND TABLES ################
 ###############################################
 
 ### Plot by year (barplot)
-yearFreq <- table(M$PY)
+yearFreq <- table(data$Year)
 plot(yearFreq, main="", xlab="Time", ylab="Number of articles", type="l")
 savePlot("./output/pubsbyyear.png")
 
 ### Group prevalence per year
 # This line is to complete the year list adding years with no publications
-y <- factor(M$PY, levels=years, ordered=T)
-M$y <- y
+data$y <- factor(data$Year, levels=years, ordered=T)
+
 # Make a table of pubs per year per group
-yearFreqTab <- table(y, M$group)
+yearFreqTab <- table(y, data$group)
 # Obs: the columns in this tab are:
 # 1: neither
 # 2: climate change
@@ -171,7 +170,7 @@ CR <- citations(M, field = "article", sep = ";")
 mostCited <- data[order(data$Cited.by, decreasing=T)[1:20],c("Authors", "Year", "Title", "DOI", "Source.title", "Cited.by")]
 my_write.csv(mostCited, "./output/mostcited20.csv")
 # Distribution of citation and author afilliation
-hist(M$TC,
+hist(data$Citec.by,
   main="Distribution of citations",
   xlab="Number of citations",
   ylab="Number of articles")
