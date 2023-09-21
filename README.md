@@ -60,3 +60,7 @@ Produzimos os seguintes gráficos:
 - Author Keywords mais frequentes
 - Index keywords mais frequentes
 - Revistas com maior número de publicações
+- Histograma de número de citações por artigo
+
+E as seguintes tabelas:
+- Artigos mais citados

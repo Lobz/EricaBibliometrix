@@ -5,16 +5,39 @@ dataFilenameRData <- "./input/scopus2023_09_12.RData"
 libDir <- "lib"
 # load all files listed in libs
 sapply(list.files(libDir, full.names = T), source)
+library(bibliometrix)
 
 # load data
 load(dataFilenameRData)
-# data <- my_read.csv(dataFilenameCSV)
 names(M)
 
-### Subgroups defined by presence of these terms in Title or Abstract or Keywords, or terms containing these in Keywords
-climateChangeWords <- c("climate change", "blue carbon", "greenhouse gas mitigation", "carbon stock", "carbon sink", "carbon sequestration")
-recoveryWords <- c("recovery", "microbial succession", "reforestation", "replanting", "restoration", "remediation")
+data <- my_read.csv(dataFilenameCSV)
+data <- convert_with(data, c("Document.Type", "Publication.Stage", "Source", "Open.Access"), as.factor)
+data <- convert_with(data, c("Page.count", "Cited", "Year"), as.integer)
 
+## A few infos about years
+lastYear <- max(M$PY) #2023
+firstYear <- min(M$PY) #1959
+numberofyears <- lastYear - firstYear +1
+years <- firstYear:lastYear
+
+## Function to turn a list of authors into a string
+authorstr <- function(x) {
+  if (length(x)==1)
+    return(x)
+  else if (length(x)==2)
+    return(paste(x[1],"and",x[2]))
+  else {
+     return(paste(x[1],"et al."))
+  }
+}
+
+## Obtain author str to use in refs
+data$authorstr <- sapply(strsplit(data$Authors, "; "), authorstr)
+
+#######################################################################
+################ KEYWORDS AND WORDS ###################################
+#######################################################################
 
 ### Extract keywords (set sep as the separator between keywords)
 (keywordTab <- make_word_table(M$ID, min.Freq = 1, sep = "; "))
@@ -22,17 +45,11 @@ write.csv(keywordTab[1:200,], "./output/IDkeywordTable.csv")
 (authorKeywordTab <- make_word_table(M$DE, min.Freq = 1, sep = "; "))
 write.csv(authorKeywordTab[1:200,], "./output/AUkeywordTable.csv")
 
-### Find a list of keywords containing the keywords for each group:
 keywords <- list_unique(c(rownames(keywordTab), (rownames(authorKeywordTab))))
 write(keywords, "./output/keywords.txt")
-climateChangeKeywords <- subwords(climateChangeWords, keywords)
-recoveryKeywords <- subwords(recoveryWords, keywords)
 
-### Set a variable to list if a document in in each group
 wordlistsAK <- make_wordslist(M$DE, sep="; ")
 wordlistsIK <- make_wordslist(M$ID, sep="; ")
-M$climateKeywords <- contains_any(wordlistsAK, climateChangeKeywords) | contains_any(wordlistsIK, climateChangeKeywords)
-M$recoveryKeywords <- contains_any(wordlistsAK, recoveryKeywords) | contains_any(wordlistsIK, recoveryKeywords)
 
 ### Extract word from text
 my_stopwords = bibliometrix::stopwords$en
@@ -41,13 +58,32 @@ abstractWords <- make_word_table(M$AB,  min.Freq=1, remove.terms = my_stopwords)
 words <- list_unique(c(rownames(titleWords),rownames(abstractWords)))
 write(words, "./output/words.txt")
 
-### Set a variable to list if a document contain any words in each group
+##############################################################
+################## SUBGROUPS #################################
+##############################################################
+
+### Subgroups defined by presence of these terms in Title or Abstract or Keywords, or terms containing these in Keywords
+
+climateChangeWords <- c("climate change", "blue carbon", "greenhouse gas mitigation", "carbon stock", "carbon sink", "carbon sequestration")
+
+recoveryWords <- c("recovery", "microbial succession", "reforestation", "replanting", "restoration", "remediation")
+
+### Identify actual keywords that correspond to the lists above
+climateChangeKeywords <- subwords(climateChangeWords, keywords)
+recoveryKeywords <- subwords(recoveryWords, keywords)
+
+### Set a variable to list if a document contains keywords the keywords selected
+M$climateKeywords <- contains_any(wordlistsAK, climateChangeKeywords) | contains_any(wordlistsIK, climateChangeKeywords)
+M$recoveryKeywords <- contains_any(wordlistsAK, recoveryKeywords) | contains_any(wordlistsIK, recoveryKeywords)
+
+### And now with abstract and title words
 M$climateWords <- str_contains_any(M$TI, climateChangeWords) | str_contains_any(M$AB, climateChangeWords)
 M$recoveryWords <- str_contains_any(M$TI, recoveryWords) | str_contains_any(M$AB, recoveryWords)
 
 ### Join keyword and word groups
 M$climateGroup <- M$climateKeywords | M$climateWords
 M$recoveryGroup <- M$recoveryKeywords | M$recoveryWords
+
 ### Create a factor for groups by using binary math
 # 0: none
 # 1: climate
@@ -57,13 +93,11 @@ groupLevels <- c("neither", "climate change", "recovery", "both")
 M$group <- factor(M$climateGroup + 2*M$recoveryGroup, labels=groupLevels, ordered=F, levels=0:3)
 summary(M$group)
 
-#### Plots/tables we want:
-# Pubs per year
+###############################################
+############# PLOTS AND TABLES ################
+###############################################
+
 ### Plot by year (barplot)
-lastYear <- max(M$PY) #2023
-firstYear <- min(M$PY) #1959
-numberofyears <- lastYear - firstYear +1
-years <- firstYear:lastYear
 yearFreq <- table(M$PY)
 plot(yearFreq, main="", xlab="Time", ylab="Number of articles", type="l")
 savePlot("./output/pubsbyyear.png")
@@ -96,10 +130,17 @@ savePlot("./output/pubsbyyeargrouped2023.png")
 
 # Top journals
 # Table number of publications per journal
-journalTab <- sort(table(M$JI), decreasing=T)
-# write.csv(journalTab, "./output/journalTotals.csv")
+totalArticles <- sort(table(M$JI), decreasing=T)
+# Table number of citations per journal
+totalCitations <- by(M$TC, M$JI, sum)
+# Organize by number of articles
+totalCitations <- totalCitations[rownames(totalArticles)]
+# Join the two
+journalTab <- cbind(totalArticles, totalCitations)
 
-## how many elements to plot in the barplot
+write.csv(journalTab, "./output/journalTotals.csv")
+
+## how many elements to plot in each barplot
 maxbars <- 20
 
 mostPubs <- rownames(journalTab[1:maxbars])
@@ -124,14 +165,17 @@ savePlot("./output/topJournals.png")
 # Pubz per year per subject
 
 res <- fieldByYear(M, field = "ID", min.freq = 10, n.items = 10, graph = TRUE)
-# Table of most cited pubs
-mostCited <- data[order(data$Cited.by, decreasing=T),][1:10,]
+# Most cited pubs
+CR <- citations(M, field = "article", sep = ";")
 
+mostCited <- data[order(data$Cited.by, decreasing=T)[1:20],c("Authors", "Year", "Title", "DOI", "Source.title", "Cited.by")]
+my_write.csv(mostCited, "./output/mostcited20.csv")
 # Distribution of citation and author afilliation
-hist(data$Cited.by,
+hist(M$TC,
   main="Distribution of citations",
   xlab="Number of citations",
   ylab="Number of articles")
+savePlot("output/distCitations.png")
 # Country of origin?
 # Most used words (title, auth-keyword, ind-keywords, separate tables)
 

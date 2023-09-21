@@ -1,7 +1,7 @@
 library(stringr)
 
 # A function to split and trim keywords from Scopus
-split_keywords <- function(keywords, sep="\\W+", remove.duplicates=T, remove.terms=c("")) {
+split_keywords <- function(keywords, sep="\\W+", remove.terms=c("")) {
   wordlist <- str_trim(strsplit(keywords, sep)[[1]])
   wordlist <- list_unique(wordlist)
   wordlist[!wordlist %in% remove.terms]
