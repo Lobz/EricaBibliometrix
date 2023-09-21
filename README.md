@@ -13,7 +13,10 @@ Restringimos a busca para "Articles only" (apenas artigos). A busca retornou 873
 
 ## Leitura dos dados
 
-Os dados foram analisados usam `R` (https://www.r-project.org/) e o pacote `bibliometrix` (https://www.bibliometrix.org). Obs: para citar o pacote bibliometrix no seu texto, siga as indicações aqui: https://www.bibliometrix.org/vignettes/Introduction_to_bibliometrix.html.
+Os dados foram analisados usam `R` (https://www.r-project.org/) e o pacote `bibliometrix` (https://www.bibliometrix.org).
+
+O pacote `bibliometrix` pode ser útil para explorar visualmente os dados usando a função `biblioshiny()`.
+Obs: para citar o pacote `bibliometrix` no seu texto, siga as indicações aqui: https://www.bibliometrix.org/vignettes/Introduction_to_bibliometrix.html.
 
 ## Classificação
 
@@ -71,3 +74,7 @@ E as seguintes tabelas:
 - Index keywords mais frequentes
 - Author Keywords mais frequentes para cada grupo
 - Index Keywords mais frequentes para cada grupo
+- Palavras mais comuns no título
+- Palavras mais comuns no abstract
+
+As tabelas estão em formato CSV. Para importá-las, recomendo abrir no Excel, Google Sheets ou semelhante, e selecionar as linhas desejadas para copiar nas suas tabelas. Assim, não limitei a quantidade de elementos em cada tabela.

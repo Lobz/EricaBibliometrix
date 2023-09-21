@@ -181,9 +181,9 @@ write.csv(authorKeywordTab[1:200,], "./output/AUkeywordTable.csv")
 ### Extract word from text
 my_stopwords = bibliometrix::stopwords$en
 titleWords <- make_word_table(data$Title, min.Freq=1, remove.terms = my_stopwords)
-write.csv(titleWords, "titleWords.csv")
+write.csv(titleWords, "output/titleWords.csv")
 abstractWords <- make_word_table(data$Abstract,  min.Freq=1, remove.terms = my_stopwords)
-write.csv(abstractWords, "abstractWords.csv")
+write.csv(abstractWords, "output/abstractWords.csv")
 words <- list_unique(c(rownames(titleWords),rownames(abstractWords)))
 write(words, "./output/words.txt")
 
