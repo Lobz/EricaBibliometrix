@@ -20,7 +20,7 @@ make_word_table <- function(x, min.Freq=1, sep="\\W+", remove.terms = c("")) {
   x <- tolower(x)
 
   # split text into words/keywords
-  wordlists <- make_wordslist(x, sep=sep, remove.terms = remove.terms)
+  wordlists <- make_wordslist(x, sep=sep, remove.terms = tolower(remove.terms))
   tab <- sort(table(unlist(wordlists)), decreasing=T)
 
   tab <- table_to_matrix(tab)
