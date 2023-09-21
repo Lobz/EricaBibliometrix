@@ -13,7 +13,7 @@ Restringimos a busca para "Articles only" (apenas artigos). A busca retornou 873
 
 ## Leitura dos dados
 
-Os dados foram analisados usam `R` (https://www.r-project.org/) e o pacote `bibliometrix` (https://www.bibliometrix.org). A leitura dos dados está feita no script `bibliometry.R`. Para citar o pacote bibliometrix no seu texto, siga as indicações aqui: https://www.bibliometrix.org/vignettes/Introduction_to_bibliometrix.html.
+Os dados foram analisados usam `R` (https://www.r-project.org/) e o pacote `bibliometrix` (https://www.bibliometrix.org). Obs: para citar o pacote bibliometrix no seu texto, siga as indicações aqui: https://www.bibliometrix.org/vignettes/Introduction_to_bibliometrix.html.
 
 ## Classificação
 
@@ -59,8 +59,12 @@ Produzimos os seguintes gráficos:
 - Artigos publicados por ano, de acordo com os grupos, removendo o ano incompleto de 2023
 - Author Keywords mais frequentes
 - Index keywords mais frequentes
-- Revistas com maior número de publicações
 - Histograma de número de citações por artigo
+- Histograma de número de citações por revista
+- Histograma de número de publicações por revista
 
 E as seguintes tabelas:
 - Artigos mais citados
+- Revistas com maior número de publicações
+- Revistas com maior número de citações totais
+- Keywords mais frequentes

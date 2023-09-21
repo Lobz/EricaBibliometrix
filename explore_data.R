@@ -37,29 +37,6 @@ authorstr <- function(x) {
 ## Obtain author str to use in refs
 data$authorstr <- sapply(strsplit(data$Authors, "; "), authorstr)
 
-#######################################################################
-################ KEYWORDS AND WORDS ###################################
-#######################################################################
-
-### Extract keywords (set sep as the separator between keywords)
-(keywordTab <- make_word_table(data$Index.Keywords, min.Freq = 1, sep = "; "))
-write.csv(keywordTab[1:200,], "./output/IDkeywordTable.csv")
-(authorKeywordTab <- make_word_table(data$Author.Keywords, min.Freq = 1, sep = "; "))
-write.csv(authorKeywordTab[1:200,], "./output/AUkeywordTable.csv")
-
-keywords <- list_unique(c(rownames(keywordTab), (rownames(authorKeywordTab))))
-write(keywords, "./output/keywords.txt")
-
-wordlistsAK <- make_wordslist(data$Author.Keywords, sep="; ")
-wordlistsIK <- make_wordslist(data$Index.Keywords, sep="; ")
-
-### Extract word from text
-my_stopwords = bibliometrix::stopwords$en
-titleWords <- make_word_table(data$Title, min.Freq=1, remove.terms = my_stopwords)
-abstractWords <- make_word_table(data$Abstract,  min.Freq=1, remove.terms = my_stopwords)
-words <- list_unique(c(rownames(titleWords),rownames(abstractWords)))
-write(words, "./output/words.txt")
-
 ##############################################################
 ################## SUBGROUPS #################################
 ##############################################################
@@ -69,6 +46,12 @@ write(words, "./output/words.txt")
 climateChangeWords <- c("climate change", "blue carbon", "greenhouse gas mitigation", "carbon stock", "carbon sink", "carbon sequestration")
 
 recoveryWords <- c("recovery", "microbial succession", "reforestation", "replanting", "restoration", "remediation")
+
+### list of all keywords
+wordlistsAK <- make_wordslist(data$Author.Keywords, sep="; ")
+wordlistsIK <- make_wordslist(data$Index.Keywords, sep="; ")
+keywords <- list_unique(c(unlist(wordlistsAK), (unlist(wordlistsIK))))
+write(keywords, "./output/keywords.txt")
 
 ### Identify actual keywords that correspond to the lists above
 climateChangeKeywords <- subwords(climateChangeWords, keywords)
@@ -94,6 +77,31 @@ data$recoveryGroup <- data$recoveryKeywords | data$recoveryWords
 groupLevels <- c("neither", "climate change", "recovery", "both")
 data$group <- factor(data$climateGroup + 2*data$recoveryGroup, labels=groupLevels, ordered=F, levels=0:3)
 summary(data$group)
+
+#######################################################################
+################ KEYWORDS AND WORDS ###################################
+#######################################################################
+
+### Extract keywords (set sep as the separator between keywords)
+(keywordTab <- make_word_table(data$Index.Keywords, min.Freq = 1, sep = "; "))
+write.csv(keywordTab[1:200,], "./output/IDkeywordTable.csv")
+(authorKeywordTab <- make_word_table(data$Author.Keywords, min.Freq = 1, sep = "; "))
+write.csv(authorKeywordTab[1:200,], "./output/AUkeywordTable.csv")
+
+### Extract word from text
+my_stopwords = bibliometrix::stopwords$en
+titleWords <- make_word_table(data$Title, min.Freq=1, remove.terms = my_stopwords)
+abstractWords <- make_word_table(data$Abstract,  min.Freq=1, remove.terms = my_stopwords)
+words <- list_unique(c(rownames(titleWords),rownames(abstractWords)))
+write(words, "./output/words.txt")
+
+## Now, keyword tabs per group
+dataClimate <- subset(data, climateGroup)
+dataRecovery <- subset(data, recoveryGroup)
+(keywordTabClimate <- make_word_table(dataClimate$Index.Keywords, min.Freq = 1, sep = "; "))
+write.csv(keywordTabClimate[1:200,], "./output/IDkeywordTableClimate.csv")
+(authorKeywordTabClimate <- make_word_table(dataClimate$Author.Keywords, min.Freq = 1, sep = "; "))
+write.csv(authorKeywordTabClimate[1:200,], "./output/AUkeywordTable.csv")
 
 ###############################################
 ############# PLOTS AND TABLES ################
