@@ -11,6 +11,7 @@ load(dataFilenameRData)
 names(M)
 
 data <- my_read.csv(dataFilenameCSV)
+data <- remove.empty.columns(data)
 data <- convert_with(data, c("Document.Type", "Publication.Stage", "Source", "Open.Access"), as.factor)
 data <- convert_with(data, c("Page.count", "Cited", "Year"), as.integer)
 
@@ -19,6 +20,8 @@ lastYear <- max(data$Year) #2023
 firstYear <- min(data$Year) #1959
 numberofyears <- lastYear - firstYear +1
 years <- firstYear:lastYear
+# This line is to complete the year list adding years with no publications
+data$Year <- factor(data$Year, levels=years, ordered=T)
 
 ## Function to turn a list of authors into a string
 authorstr <- function(x) {
@@ -102,11 +105,9 @@ plot(yearFreq, main="", xlab="Time", ylab="Number of articles", type="l")
 savePlot("./output/pubsbyyear.png")
 
 ### Group prevalence per year
-# This line is to complete the year list adding years with no publications
-data$y <- factor(data$Year, levels=years, ordered=T)
 
 # Make a table of pubs per year per group
-yearFreqTab <- table(y, data$group)
+yearFreqTab <- table(data$Year, data$group)
 # Obs: the columns in this tab are:
 # 1: neither
 # 2: climate change
@@ -140,58 +141,65 @@ journalTab <- cbind(totalArticles, totalCitations)
 write.csv(journalTab, "./output/journalTotals.csv")
 
 ## how many elements to plot in each barplot
-maxbars <- 20
+maxbars <- 30
 
-mostPubs <- rownames(journalTab[1:maxbars])
+## Distribution of papers published and total citations
+hist(totalArticles,
+  breaks=30,
+  main="Distribution of articles per source",
+  xlab="Number of articles from source",
+  ylab="Number of sources"
+)
+savePlot("output/distArticlesJournals.png")
+hist(totalCitations,
+  breaks=maxbars,
+  main="Distribution of total citations per source",
+  xlab="Number of citations of articles from source",
+  ylab="Number of sources"
+)
+savePlot("output/distCitationsJournals.png")
+
+mostPubs <- rownames(journalTab)[1:10]
 
 ## Yearly number of articles for top sources
-MP <- subset(M, JI %in% mostPubs, select=c("y","JI"))
-journalTabYearly <- table(MP$y, MP$JI)
+MP <- subset(data, Source.title %in% mostPubs, select=c("Year","Source.title"))
+journalTabYearly <- table(MP$Year, MP$Source.title)
 write.csv(journalTabYearly, "./output/journalTop10Yearly.csv")
 
-## Reduce super long name
-mostPubs[5] <- "A.V.L. INT. J. GEN. MOL. MICROBIOL."
-## Barplot
-par(mar=c(5,15,1,1))
-barplot(journalTab[1:maxbars],
-  col = 1,
-  xlab = "Number of articles",
-  names.arg = mostPubs,
-  horiz=T,
-  las=1)
-savePlot("./output/topJournals.png")
-
-# Pubz per year per subject
-
-res <- fieldByYear(M, field = "ID", min.freq = 10, n.items = 10, graph = TRUE)
-# Most cited pubs
-CR <- citations(M, field = "article", sep = ";")
-
-mostCited <- data[order(data$Cited.by, decreasing=T)[1:20],c("Authors", "Year", "Title", "DOI", "Source.title", "Cited.by")]
-my_write.csv(mostCited, "./output/mostcited20.csv")
-# Distribution of citation and author afilliation
-hist(data$Citec.by,
+## Most cited articles
+mostCited <- data[order(data$Cited.by, decreasing=T),c("authorstr", "Year", "Source.title", "Cited.by")]
+my_write.csv(mostCited, "./output/mostcited.csv")
+# Distribution of citation
+hist(data$Cited.by,
+  breaks=maxbars,
   main="Distribution of citations",
   xlab="Number of citations",
   ylab="Number of articles")
 savePlot("output/distCitations.png")
-# Country of origin?
-# Most used words (title, auth-keyword, ind-keywords, separate tables)
 
-par(mar=c(5,12,1,1))
-barplot(keywordTab$Rel.Freq[1:maxbars],
+# Country of origin?
+## Easier to do this w bibliometrix
+
+# Most used words (title, author-keyword, index-keywords, separate tables)
+# index keywords
+par(mar=c(5,12,1,2))
+barplot(keywordTab$Freq[maxbars:1],
   col = 1,
-  xlab = "Percentage of articles",
-  names.arg = row.names(keywordTab)[1:maxbars],
+  main = "Most frequent Index Keywords",
+  xlab = "Number of articles",
+  xlim = c(0,500),
+  names.arg = row.names(keywordTab)[maxbars:1],
   horiz=T,
   las=1)
 savePlot("output/indexkeywords.png")
 
-par(mar=c(5,12,1,1))
-barplot(authorKeywordTab$Rel.Freq[1:maxbars],
+# author keywords
+par(mar=c(5,10,1,2))
+barplot(authorKeywordTab$Freq[maxbars:1],
   col = 1,
-  xlab = "Percentage of articles",
-  names.arg = row.names(authorKeywordTab)[1:maxbars],
+  main = "Most frequent Author Keywords",
+  xlab = "Number of articles",
+  names.arg = row.names(authorKeywordTab)[maxbars:1],
   horiz=T,
   las=1)
 savePlot("output/authorkeywords.png")

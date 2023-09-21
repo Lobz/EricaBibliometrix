@@ -37,3 +37,8 @@ CS <- conceptualStructure(
 dev.off()
 
 CS$graph
+
+# Pubz per year per subject
+res <- fieldByYear(M, field = "ID", min.freq = 10, n.items = 10, graph = TRUE)
+# Most cited pubs
+CR <- citations(M, field = "article", sep = ";")
