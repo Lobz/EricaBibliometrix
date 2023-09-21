@@ -16,8 +16,8 @@ data <- convert_with(data, c("Document.Type", "Publication.Stage", "Source", "Op
 data <- convert_with(data, c("Page.count", "Cited", "Year"), as.integer)
 
 ## A few infos about years
-lastYear <- max(M$PY) #2023
-firstYear <- min(M$PY) #1959
+lastYear <- max(data$Year) #2023
+firstYear <- min(data$Year) #1959
 numberofyears <- lastYear - firstYear +1
 years <- firstYear:lastYear
 
@@ -130,9 +130,9 @@ savePlot("./output/pubsbyyeargrouped2023.png")
 
 # Top journals
 # Table number of publications per journal
-totalArticles <- sort(table(M$JI), decreasing=T)
+totalArticles <- sort(table(data$Source.title), decreasing=T)
 # Table number of citations per journal
-totalCitations <- by(M$TC, M$JI, sum)
+totalCitations <- by(data$Cited.by, data$Source.title, sum)
 # Organize by number of articles
 totalCitations <- totalCitations[rownames(totalArticles)]
 # Join the two
