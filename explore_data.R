@@ -101,7 +101,7 @@ dataRecovery <- subset(data, recoveryGroup)
 (keywordTabClimate <- make_word_table(dataClimate$Index.Keywords, min.Freq = 1, sep = "; "))
 write.csv(keywordTabClimate[1:200,], "./output/IDkeywordTableClimate.csv")
 (authorKeywordTabClimate <- make_word_table(dataClimate$Author.Keywords, min.Freq = 1, sep = "; "))
-write.csv(authorKeywordTabClimate[1:200,], "./output/AUkeywordTable.csv")
+write.csv(authorKeywordTabClimate[1:200,], "./output/AUkeywordTableClimate.csv")
 
 ###############################################
 ############# PLOTS AND TABLES ################
